@@ -1,0 +1,5 @@
+https://mrjerryli.github.io/2018/10/28/Springcloud2-0脚手架/
+https://mrjerryli.github.io/2018/10/28/redis教程（一）/
+https://mrjerryli.github.io/2018/10/28/maven本地仓库打包（一）/
+https://mrjerryli.github.io/2018/10/28/rabbitmq教程（一）/
+https://mrjerryli.github.io/2018/10/28/Mac环境下mysql服务无法正常启动/
