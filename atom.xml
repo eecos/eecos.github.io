@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>李加廷的个人博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://mrjerryli.github.io/"/>
+  <updated>2018-10-30T03:56:12.979Z</updated>
+  <id>https://mrjerryli.github.io/</id>
+  
+  <author>
+    <name>李加廷(jerry)</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Springcloud2.0脚手架</title>
+    <link href="https://mrjerryli.github.io/2018/10/28/Springcloud2-0%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    <id>https://mrjerryli.github.io/2018/10/28/Springcloud2-0脚手架/</id>
+    <published>2018-10-28T10:35:01.000Z</published>
+    <updated>2018-10-30T03:56:12.979Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Springcloud2.0 脚手架（本人收集的资料）&lt;br&gt;
+    
+    </summary>
+    
+      <category term="分布式架构" scheme="https://mrjerryli.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="springcloud" scheme="https://mrjerryli.github.io/tags/springcloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis教程（一）</title>
+    <link href="https://mrjerryli.github.io/2018/10/28/redis%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://mrjerryli.github.io/2018/10/28/redis教程（一）/</id>
+    <published>2018-10-28T10:33:35.000Z</published>
+    <updated>2018-10-30T03:56:12.972Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#redis教程&lt;br&gt;
+    
+    </summary>
+    
+      <category term="环境配置" scheme="https://mrjerryli.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Redis" scheme="https://mrjerryli.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>maven本地仓库打包（一）</title>
+    <link href="https://mrjerryli.github.io/2018/10/28/maven%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E6%89%93%E5%8C%85%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://mrjerryli.github.io/2018/10/28/maven本地仓库打包（一）/</id>
+    <published>2018-10-28T10:32:07.000Z</published>
+    <updated>2018-10-30T03:56:12.974Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;maven将jar手动打入本地仓库&lt;br&gt;
+    
+    </summary>
+    
+      <category term="认识与提升" scheme="https://mrjerryli.github.io/categories/%E8%AE%A4%E8%AF%86%E4%B8%8E%E6%8F%90%E5%8D%87/"/>
+    
+    
+      <category term="maven" scheme="https://mrjerryli.github.io/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rabbitmq教程（一）</title>
+    <link href="https://mrjerryli.github.io/2018/10/28/rabbitmq%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://mrjerryli.github.io/2018/10/28/rabbitmq教程（一）/</id>
+    <published>2018-10-28T10:27:53.000Z</published>
+    <updated>2018-10-30T03:56:12.976Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;启动rabbitmq教程&lt;br&gt;
+    
+    </summary>
+    
+      <category term="环境配置" scheme="https://mrjerryli.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="rabbitmq" scheme="https://mrjerryli.github.io/tags/rabbitmq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac环境下mysql服务无法正常启动</title>
+    <link href="https://mrjerryli.github.io/2018/10/28/Mac%E7%8E%AF%E5%A2%83%E4%B8%8Bmysql%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%90%AF%E5%8A%A8/"/>
+    <id>https://mrjerryli.github.io/2018/10/28/Mac环境下mysql服务无法正常启动/</id>
+    <published>2018-10-28T10:09:15.000Z</published>
+    <updated>2018-10-30T03:56:12.981Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;sudo chown -RL root:mysql /usr/local/mysql
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://mrjerryli.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://mrjerryli.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+</feed>
