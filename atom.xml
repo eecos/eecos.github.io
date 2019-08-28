@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>lijiating’s Blog</title>
+  
+  <subtitle>凡是挣扎过来的人都是真金不怕火炼的；任何幻灭都不能动摇他们的信仰：因为他们一开始就知道信仰之路和幸福之路全然不同，而他们是不能选选择的，只有往这条路走，别的都是死路。这样的自信不是一朝一夕所能养成的。你绝不能以此期待那些十五岁左右的孩子。在得到这个信念之之前，先得受尽悲痛，流尽眼泪。可是这样是好的，应该要这样……</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://mrjerryli.github.io/"/>
+  <updated>2019-08-28T08:32:36.881Z</updated>
+  <id>https://mrjerryli.github.io/</id>
+  
+  <author>
+    <name>李加廷</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>yarn切换镜像源</title>
+    <link href="https://mrjerryli.github.io/post/c965c636.html"/>
+    <id>https://mrjerryli.github.io/post/c965c636.html</id>
+    <published>2019-08-28T08:23:25.000Z</published>
+    <updated>2019-08-28T08:32:36.881Z</updated>
+    
+    <summary type="html">
+    
+      yarn
+    
+    </summary>
+    
+      <category term="yarn" scheme="https://mrjerryli.github.io/categories/yarn/"/>
+    
+    
+      <category term="web" scheme="https://mrjerryli.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos</title>
+    <link href="https://mrjerryli.github.io/post/cd183338.html"/>
+    <id>https://mrjerryli.github.io/post/cd183338.html</id>
+    <published>2019-08-04T23:32:01.000Z</published>
+    <updated>2019-08-11T03:39:26.557Z</updated>
+    
+    <summary type="html">
+    
+      centos
+    
+    </summary>
+    
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+    
+      <category term="centos" scheme="https://mrjerryli.github.io/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>protobuf</title>
+    <link href="https://mrjerryli.github.io/post/99fac5be.html"/>
+    <id>https://mrjerryli.github.io/post/99fac5be.html</id>
+    <published>2019-08-03T20:53:47.000Z</published>
+    <updated>2019-08-11T01:39:47.195Z</updated>
+    
+    <summary type="html">
+    
+      protobuf
+    
+    </summary>
+    
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+    
+      <category term="netty" scheme="https://mrjerryli.github.io/tags/netty/"/>
+    
+      <category term="protobuf" scheme="https://mrjerryli.github.io/tags/protobuf/"/>
+    
+  </entry>
+  
+</feed>
