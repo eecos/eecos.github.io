@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2019-08-28T08:32:36.881Z</updated>
+  <updated>2019-09-10T14:11:50.285Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ZooKeeper安装及配置 for Mac</title>
+    <link href="https://mrjerryli.github.io/post/3ad834c9.html"/>
+    <id>https://mrjerryli.github.io/post/3ad834c9.html</id>
+    <published>2019-09-10T13:45:35.000Z</published>
+    <updated>2019-09-10T14:11:50.285Z</updated>
+    
+    <summary type="html">
+    
+      zookeeper
+    
+    </summary>
+    
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+    
+      <category term="zookeeper" scheme="https://mrjerryli.github.io/tags/zookeeper/"/>
+    
+  </entry>
   
   <entry>
     <title>yarn切换镜像源</title>
