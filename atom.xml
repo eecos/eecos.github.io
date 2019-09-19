@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2019-09-19T11:33:06.950Z</updated>
+  <updated>2019-09-19T11:42:16.709Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://mrjerryli.github.io/post/87630688.html"/>
     <id>https://mrjerryli.github.io/post/87630688.html</id>
     <published>2019-09-19T11:33:06.000Z</published>
-    <updated>2019-09-19T11:33:06.950Z</updated>
+    <updated>2019-09-19T11:42:16.709Z</updated>
     
     <summary type="html">
     
@@ -29,6 +29,10 @@
     
     </summary>
     
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+    
+      <category term="linux" scheme="https://mrjerryli.github.io/tags/linux/"/>
     
   </entry>
   
