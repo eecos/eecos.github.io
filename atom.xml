@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2019-09-10T14:21:30.996Z</updated>
+  <updated>2019-09-19T11:33:06.950Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac杀死端口</title>
+    <link href="https://mrjerryli.github.io/post/87630688.html"/>
+    <id>https://mrjerryli.github.io/post/87630688.html</id>
+    <published>2019-09-19T11:33:06.000Z</published>
+    <updated>2019-09-19T11:33:06.950Z</updated>
+    
+    <summary type="html">
+    
+      mac杀死端口
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ZooKeeper安装及配置 for Mac</title>
