@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2019-10-12T12:23:15.462Z</updated>
+  <updated>2019-10-21T16:56:52.068Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MAC使用homeBrew安装Redis</title>
+    <link href="https://mrjerryli.github.io/post/63201c18.html"/>
+    <id>https://mrjerryli.github.io/post/63201c18.html</id>
+    <published>2019-10-21T16:55:09.000Z</published>
+    <updated>2019-10-21T16:56:52.068Z</updated>
+    
+    <summary type="html">
+    
+      MAC使用homeBrew安装Redis
+    
+    </summary>
+    
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+    
+      <category term="Mac" scheme="https://mrjerryli.github.io/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
     <title>springboot-thymeleaf动态模板生成</title>
     <link href="https://mrjerryli.github.io/post/457323eb.html"/>
     <id>https://mrjerryli.github.io/post/457323eb.html</id>
     <published>2019-10-12T12:13:18.000Z</published>
-    <updated>2019-10-12T12:23:15.462Z</updated>
+    <updated>2019-10-21T16:56:48.420Z</updated>
     
     <summary type="html">
     
@@ -29,6 +49,10 @@
     
     </summary>
     
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+    
+      <category term="springboot" scheme="https://mrjerryli.github.io/tags/springboot/"/>
     
   </entry>
   
