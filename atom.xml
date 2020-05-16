@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2019-10-21T16:56:52.068Z</updated>
+  <updated>2020-05-16T21:04:23.861Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>阿里云配置Let’s Encrypt证书</title>
+    <link href="https://mrjerryli.github.io/post/7bd4d456.html"/>
+    <id>https://mrjerryli.github.io/post/7bd4d456.html</id>
+    <published>2020-05-16T20:06:25.000Z</published>
+    <updated>2020-05-16T21:04:23.861Z</updated>
+    
+    <summary type="html">
+    
+      阿里云配置Let’s Encrypt证书
+    
+    </summary>
+    
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+    
+      <category term="centos" scheme="https://mrjerryli.github.io/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MAC使用homeBrew安装Redis</title>
     <link href="https://mrjerryli.github.io/post/63201c18.html"/>
     <id>https://mrjerryli.github.io/post/63201c18.html</id>
     <published>2019-10-21T16:55:09.000Z</published>
-    <updated>2019-10-21T16:56:52.068Z</updated>
+    <updated>2019-10-21T16:58:13.026Z</updated>
     
     <summary type="html">
     

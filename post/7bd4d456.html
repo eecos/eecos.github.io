@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?ef3f5d2e3a"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>阿里云配置Let’s Encrypt证书 | lijiating’s Blog | 凡是挣扎过来的人都是真金不怕火炼的；任何幻灭都不能动摇他们的信仰：因为他们一开始就知道信仰之路和幸福之路全然不同，而他们是不能选选择的，只有往这条路走，别的都是死路。这样的自信不是一朝一夕所能养成的。你绝不能以此期待那些十五岁左右的孩子。在得到这个信念之之前，先得受尽悲痛，流尽眼泪。可是这样是好的，应该要这样……</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="centos">
+    <meta name="description" content="阿里云配置Let’s Encrypt证书">
+<meta name="keywords" content="阿里云配置Let’s Encrypt证书">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云配置Let’s Encrypt证书">
+<meta property="og:url" content="https://mrjerryli.github.io/post/7bd4d456.html">
+<meta property="og:site_name" content="lijiating’s Blog">
+<meta property="og:description" content="阿里云配置Let’s Encrypt证书">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://mrjerryli.github.io/post/7bd4d456/WX20200517-041354.png">
+<meta property="og:image" content="https://mrjerryli.github.io/post/7bd4d456/WX20200517-041649.png">
+<meta property="og:image" content="https://mrjerryli.github.io/post/7bd4d456/WX20200517-041903@2x.png">
+<meta property="og:image" content="https://mrjerryli.github.io/post/7bd4d456/WeChat0cfc416d6cd0cdecdb9c068ca0fc3927.png">
+<meta property="og:image" content="https://mrjerryli.github.io/post/7bd4d456/WX20200517-042744@2x.png">
+<meta property="og:image" content="https://mrjerryli.github.io/post/7bd4d456/WX20200517-043130.png">
+<meta property="og:image" content="https://mrjerryli.github.io/post/7bd4d456/WX20200517-043321.png">
+<meta property="og:image" content="https://mrjerryli.github.io/post/7bd4d456/WX20200517-043417.png">
+<meta property="og:updated_time" content="2020-05-16T21:04:23.861Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="阿里云配置Let’s Encrypt证书">
+<meta name="twitter:description" content="阿里云配置Let’s Encrypt证书">
+<meta name="twitter:image" content="https://mrjerryli.github.io/post/7bd4d456/WX20200517-041354.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="lijiating’s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">李加廷</h5>
+          <a href="mailto:653942945@qq.com" title="653942945@qq.com" class="mail">653942945@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                档案
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/ljtJerry" target="_blank" >
+                <i class="icon icon-lg icon-meetup"></i>
+                码云
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mrjerryli" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">阿里云配置Let’s Encrypt证书</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">阿里云配置Let’s Encrypt证书</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-16T20:06:25.000Z" itemprop="datePublished" class="page-time">
+  2020-05-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Server/">Server</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Let’s-Encrypt证书申请、阿里云配置Let’s-Encrypt证书"><span class="post-toc-number">1.</span> <span class="post-toc-text">Let’s Encrypt证书申请、阿里云配置Let’s Encrypt证书</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、证书申请"><span class="post-toc-number">2.</span> <span class="post-toc-text">一、证书申请</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#申请入口：https-letsencrypt-osfipin-com"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">申请入口：https://letsencrypt.osfipin.com/</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#申请成功，如下："><span class="post-toc-number">2.2.</span> <span class="post-toc-text">申请成功，如下：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#点击查查，可进行证书的下载"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">点击查查，可进行证书的下载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解压后得到六个文件"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">解压后得到六个文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、证书安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">二、证书安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录阿里云控制台，打开SSL证书列表"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">登录阿里云控制台，打开SSL证书列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#点击上传证书，将证书文件及私钥进行上传"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">点击上传证书，将证书文件及私钥进行上传</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上传完成后，结果如下图，在已签发中可查询的到"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">上传完成后，结果如下图，在已签发中可查询的到</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#阿里云ECS服务器打开443安全组访问规则"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">阿里云ECS服务器打开443安全组访问规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SSH进入centos服务器，配置NGINX关于-HTTPS-配置，脚本如下："><span class="post-toc-number">3.5.</span> <span class="post-toc-text">SSH进入centos服务器，配置NGINX关于 HTTPS 配置，脚本如下：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#centos开放443端口，重启防火墙"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">centos开放443端口，重启防火墙</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-阿里云配置Let’sEncrypt证书"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">阿里云配置Let’s Encrypt证书</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-05-17 04:06:25" datetime="2020-05-16T20:06:25.000Z"  itemprop="datePublished">2020-05-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Server/">Server</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="Let’s-Encrypt证书申请、阿里云配置Let’s-Encrypt证书"><a href="#Let’s-Encrypt证书申请、阿里云配置Let’s-Encrypt证书" class="headerlink" title="Let’s Encrypt证书申请、阿里云配置Let’s Encrypt证书"></a>Let’s Encrypt证书申请、阿里云配置Let’s Encrypt证书</h2><h2 id="一、证书申请"><a href="#一、证书申请" class="headerlink" title="一、证书申请"></a>一、证书申请</h2><h3 id="申请入口：https-letsencrypt-osfipin-com"><a href="#申请入口：https-letsencrypt-osfipin-com" class="headerlink" title="申请入口：https://letsencrypt.osfipin.com/"></a>申请入口：<a href="https://letsencrypt.osfipin.com/" target="_blank" rel="noopener">https://letsencrypt.osfipin.com/</a></h3><h3 id="申请成功，如下："><a href="#申请成功，如下：" class="headerlink" title="申请成功，如下："></a>申请成功，如下：</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/post/7bd4d456/WX20200517-041354.png" alt="证书" title>
+                </div>
+                <div class="image-caption">证书</div>
+            </figure>
+<h3 id="点击查查，可进行证书的下载"><a href="#点击查查，可进行证书的下载" class="headerlink" title="点击查查，可进行证书的下载"></a>点击查查，可进行证书的下载</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/post/7bd4d456/WX20200517-041649.png" alt="证书下载" title>
+                </div>
+                <div class="image-caption">证书下载</div>
+            </figure>
+<h3 id="解压后得到六个文件"><a href="#解压后得到六个文件" class="headerlink" title="解压后得到六个文件"></a>解压后得到六个文件</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/post/7bd4d456/WX20200517-041903@2x.png" alt="证书解压" title>
+                </div>
+                <div class="image-caption">证书解压</div>
+            </figure>
+<blockquote>
+<blockquote>
+<p>压缩包文件说明</p>
+<ul>
+<li>private.pem 密钥，可更改后缀为key</li>
+<li>fullchain.crt 完整证书，可更改后缀为pem</li>
+<li>certificate.pfx IIS和Tomcat使用，秘钥在detail.txt中</li>
+<li>certificate.crt 域名证书，一般不用</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="二、证书安装"><a href="#二、证书安装" class="headerlink" title="二、证书安装"></a>二、证书安装</h2><h3 id="登录阿里云控制台，打开SSL证书列表"><a href="#登录阿里云控制台，打开SSL证书列表" class="headerlink" title="登录阿里云控制台，打开SSL证书列表"></a>登录阿里云控制台，打开SSL证书列表</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/post/7bd4d456/WeChat0cfc416d6cd0cdecdb9c068ca0fc3927.png" alt="ssl列表" title>
+                </div>
+                <div class="image-caption">ssl列表</div>
+            </figure>
+<h3 id="点击上传证书，将证书文件及私钥进行上传"><a href="#点击上传证书，将证书文件及私钥进行上传" class="headerlink" title="点击上传证书，将证书文件及私钥进行上传"></a>点击上传证书，将证书文件及私钥进行上传</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/post/7bd4d456/WX20200517-042744@2x.png" alt="证书上传" title>
+                </div>
+                <div class="image-caption">证书上传</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/post/7bd4d456/WX20200517-043130.png" alt="证书上传" title>
+                </div>
+                <div class="image-caption">证书上传</div>
+            </figure>
+<h3 id="上传完成后，结果如下图，在已签发中可查询的到"><a href="#上传完成后，结果如下图，在已签发中可查询的到" class="headerlink" title="上传完成后，结果如下图，在已签发中可查询的到"></a>上传完成后，结果如下图，在已签发中可查询的到</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/post/7bd4d456/WX20200517-043321.png" alt="证书已签发" title>
+                </div>
+                <div class="image-caption">证书已签发</div>
+            </figure>
+<h3 id="阿里云ECS服务器打开443安全组访问规则"><a href="#阿里云ECS服务器打开443安全组访问规则" class="headerlink" title="阿里云ECS服务器打开443安全组访问规则"></a>阿里云ECS服务器打开443安全组访问规则</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/post/7bd4d456/WX20200517-043417.png" alt="安全访问规则" title>
+                </div>
+                <div class="image-caption">安全访问规则</div>
+            </figure>
+<h3 id="SSH进入centos服务器，配置NGINX关于-HTTPS-配置，脚本如下："><a href="#SSH进入centos服务器，配置NGINX关于-HTTPS-配置，脚本如下：" class="headerlink" title="SSH进入centos服务器，配置NGINX关于 HTTPS 配置，脚本如下："></a>SSH进入centos服务器，配置NGINX关于 HTTPS 配置，脚本如下：</h3><ul>
+<li><p>在NGINX 配置目录conf下创建文件夹<code>cert</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir cert<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>上传申请免费域名的证书及秘钥文件，即<code>fullchain.crt</code> 与 <code>cert/private.pem</code></p>
+</li>
+<li><p>编辑nginx.conf文件</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta"><br>#</span> HTTPS server<br>  server &#123;<br>      listen       443 ssl http2;<br>      server_name  你的域名;<br><br>      ssl_certificate      cert/fullchain.crt;<br>      ssl_certificate_key  cert/private.pem;<br><br>      ssl_protocols TLSv1.1 TLSv1.2;<br>      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;<br>      ssl_prefer_server_ciphers on;<br>      ssl_session_cache shared:SSL:10m;<br>      ssl_session_timeout 10m;<br><br>   location / &#123;<br>          root   html;<br>          index  index.html index.htm;<br>      &#125;<br> &#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>检查NGINX配置文件是否编辑正确，重启NGINX</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><br>▶ ./nginx -t                                      <br>nginx: the configuration file /opt/nginx/conf/nginx.conf syntax is ok<br>nginx: configuration file /opt/nginx/conf/nginx.conf test is successful<br><br><br>▶ ./nginx -s reload<br></code></pre></td></tr></table></figure>
+<h3 id="centos开放443端口，重启防火墙"><a href="#centos开放443端口，重启防火墙" class="headerlink" title="centos开放443端口，重启防火墙"></a>centos开放443端口，重启防火墙</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><br>▶ firewall-cmd --add-port=443/tcp --permanent<br><br><br>▶ firewall-cmd --reload<br></code></pre></td></tr></table></figure>
+<p>到这，安心的放你的HTTPS的网站把，已经大功告成。</p>
+<p><code>注意：</code><br> 在NGINX配置https时，可能会报错找不到 <code>ssl</code>,原因是在安装NGINX时，没有将<code>ssl</code>模块进行安装，该模块依赖于 <code>openssl openssl-devel</code>，安装脚本如下,随后从新编译安装NGINX就可以了。</p>
+<p> <strong><em>yum -y install openssl openssl-devel</em></strong></p>
+<p>缺点就是证书只能维持三个月，不是长久，解决方案为使用脚本定时刷新更新证书，但是阿里云还是需要手工进行配置。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-05-16T21:04:23.861Z" itemprop="dateUpdated">2020-05-17 05:04:23</time>
+</span><br>
+
+
+        
+        <a href="/post/7bd4d456.html" target="_blank" rel="external">https://mrjerryli.github.io/post/7bd4d456.html</a>
+        
+    </div>
+    <footer>
+        <a href="https://mrjerryli.github.io">
+            <img src="/img/avatar.jpg" alt="李加廷">
+            李加廷
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mrjerryli.github.io/post/7bd4d456.html&title=《阿里云配置Let’s Encrypt证书》 — lijiating’s Blog&pic=https://mrjerryli.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mrjerryli.github.io/post/7bd4d456.html&title=《阿里云配置Let’s Encrypt证书》 — lijiating’s Blog&source=lijiating’s Blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mrjerryli.github.io/post/7bd4d456.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《阿里云配置Let’s Encrypt证书》 — lijiating’s Blog&url=https://mrjerryli.github.io/post/7bd4d456.html&via=https://mrjerryli.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mrjerryli.github.io/post/7bd4d456.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/63201c18.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MAC使用homeBrew安装Redis</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "null",
+            appKey: "null",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>李加廷 &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mrjerryli.github.io/post/7bd4d456.html&title=《阿里云配置Let’s Encrypt证书》 — lijiating’s Blog&pic=https://mrjerryli.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mrjerryli.github.io/post/7bd4d456.html&title=《阿里云配置Let’s Encrypt证书》 — lijiating’s Blog&source=lijiating’s Blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mrjerryli.github.io/post/7bd4d456.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《阿里云配置Let’s Encrypt证书》 — lijiating’s Blog&url=https://mrjerryli.github.io/post/7bd4d456.html&via=https://mrjerryli.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mrjerryli.github.io/post/7bd4d456.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aQZLiMAwFUO5/aXo7VdMJ/8swU9jPK6o7ifNYCEnW4xGv51/rz79fXZk8c3bvcGFgYHwt43m7rjZItry6/gqQ3HW5LwYGxgGM5CXuSfef7/dK9n3xHAwMDIwgdN4/Z4bHwMDA+F8Bd/ZkDAwMjKSInSV8K4H7I7U4BgbGFzLyrvu///yR8w0MDIyvYjzL1aZr7QHDbGFgYOzNaJv166MVbZpYvA8GBsYxjHbAoi1E2wBdJIsYGBibMpJDx7Zllo98zZLIX/6LgYFxAOM+aCYbrFCLMrVtt2FgYGzEaAcd2oPGBDy7FwMD4wRGUky2iWAS1t8wBIaBgXEMI2/3t6T8EDT5Ol6U0xgYGFsz8u76Jw4GZr39F8/EwMDYjvGuzVZGK9YTVgwMjBMY7w2F7ZNXxjIwMDAw2iGJ2UtHL5oPW2BgYGzHWDkMaEcxZiG7vhcDA2NTRts+m5Wvn+BhYGCcw0jaW494rR985j8DdZcOAwPjaxnrow9tMF1JBOvfDQwMjI0Ys5Tu/pp2aDXffakKx8DA2IIxe6GlgYlReYyBgXEC41muWZq4MnJR1N8YGBibMmbBLknm2gZc0vqPEkQMDIxNGfkIRfutzBLBYfqIgYFxACMfa2hL3DYED5EYGBgYCxvnRwL5LtFAGAYGxsGMPMi2R5WzlhwGBsY5jOQl8vKybejPxjIwMDDOYcx6WW1iNwvNbTmNgYGxHeMH9wzbGbuGwMUAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=true&web_id=true')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
