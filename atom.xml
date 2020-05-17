@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2020-05-16T21:04:23.861Z</updated>
+  <updated>2020-05-17T04:19:57.002Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker-compose在线升级</title>
+    <link href="https://mrjerryli.github.io/post/b82f2049.html"/>
+    <id>https://mrjerryli.github.io/post/b82f2049.html</id>
+    <published>2020-05-17T04:11:25.000Z</published>
+    <updated>2020-05-17T04:19:57.002Z</updated>
+    
+    <summary type="html">
+    
+      docker-compose在线升级
+    
+    </summary>
+    
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+      <category term="Docker" scheme="https://mrjerryli.github.io/categories/Server/Docker/"/>
+    
+    
+      <category term="centos" scheme="https://mrjerryli.github.io/tags/centos/"/>
+    
+  </entry>
   
   <entry>
     <title>阿里云配置Let’s Encrypt证书</title>
