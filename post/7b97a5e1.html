@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="lijiating’s Blog">
 <meta property="og:description" content="DockerCompose搭zookeeper集群">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-17T18:55:26.136Z">
+<meta property="og:updated_time" content="2020-05-17T18:57:49.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DockerCompose搭zookeeper集群">
 <meta name="twitter:description" content="DockerCompose搭zookeeper集群">
@@ -168,6 +168,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备zookeeper镜像"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备zookeeper镜像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备docker-compose-yml文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备docker-compose.yml文件</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-容器化部署zookeeper"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -189,14 +196,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h2 id="准备zookeeper镜像"><a href="#准备zookeeper镜像" class="headerlink" title="准备zookeeper镜像"></a>准备zookeeper镜像</h2><ul>
+<li>这里使用官方提供的镜像，版本为3.4.11</li>
+<li>docker-compose分布式管理组件，具体安装以及使用方法见github项目</li>
+</ul>
+<h2 id="准备docker-compose-yml文件"><a href="#准备docker-compose-yml文件" class="headerlink" title="准备docker-compose.yml文件"></a>准备<code>docker-compose.yml</code>文件</h2><blockquote>
+<p>这里要注意下yml语法，key冒号后面有空格</p>
+</blockquote>
+<ul>
+<li>这里采用官方镜像提供默认配置，可根据docker-compose配置说明做调整</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><br><br></code></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-05-17T18:55:26.136Z" itemprop="dateUpdated">2020-05-18 02:55:26</time>
+    最后更新时间：<time datetime="2020-05-17T18:57:49.956Z" itemprop="dateUpdated">2020-05-18 02:57:49</time>
 </span><br>
 
 
