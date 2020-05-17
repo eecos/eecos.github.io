@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2020-05-17T04:20:31.071Z</updated>
+  <updated>2020-05-17T18:52:27.654Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DockerCompose搭zookeeper集群</title>
+    <link href="https://mrjerryli.github.io/post/7b97a5e1.html"/>
+    <id>https://mrjerryli.github.io/post/7b97a5e1.html</id>
+    <published>2020-05-17T18:24:08.000Z</published>
+    <updated>2020-05-17T18:52:27.654Z</updated>
+    
+    <summary type="html">
+    
+      DockerCompose搭zookeeper集群
+    
+    </summary>
+    
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+      <category term="Docker" scheme="https://mrjerryli.github.io/categories/Server/Docker/"/>
+    
+    
+      <category term="centos" scheme="https://mrjerryli.github.io/tags/centos/"/>
+    
+  </entry>
   
   <entry>
     <title>docker-compose在线升级</title>
