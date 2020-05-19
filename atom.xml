@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2020-05-17T19:02:29.507Z</updated>
+  <updated>2020-05-19T03:50:12.870Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker搭建redis集群</title>
+    <link href="https://mrjerryli.github.io/post/1672ce0a.html"/>
+    <id>https://mrjerryli.github.io/post/1672ce0a.html</id>
+    <published>2020-05-19T03:46:20.000Z</published>
+    <updated>2020-05-19T03:50:12.870Z</updated>
+    
+    <summary type="html">
+    
+      docker搭建redis集群
+    
+    </summary>
+    
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+      <category term="Docker" scheme="https://mrjerryli.github.io/categories/Server/Docker/"/>
+    
+    
+      <category term="centos" scheme="https://mrjerryli.github.io/tags/centos/"/>
+    
+  </entry>
   
   <entry>
     <title>DockerCompose搭zookeeper集群</title>
