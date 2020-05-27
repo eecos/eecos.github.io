@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2020-05-19T03:50:12.870Z</updated>
+  <updated>2020-05-27T02:54:34.150Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jira与confluence的简介</title>
+    <link href="https://mrjerryli.github.io/post/8e32da8b.html"/>
+    <id>https://mrjerryli.github.io/post/8e32da8b.html</id>
+    <published>2020-05-27T02:51:16.000Z</published>
+    <updated>2020-05-27T02:54:34.150Z</updated>
+    
+    <summary type="html">
+    
+      jira与confluence的简介
+    
+    </summary>
+    
+      <category term="Test" scheme="https://mrjerryli.github.io/categories/Test/"/>
+    
+    
+      <category term="atlassian" scheme="https://mrjerryli.github.io/tags/atlassian/"/>
+    
+  </entry>
+  
+  <entry>
     <title>docker搭建redis集群</title>
     <link href="https://mrjerryli.github.io/post/1672ce0a.html"/>
     <id>https://mrjerryli.github.io/post/1672ce0a.html</id>
     <published>2020-05-19T03:46:20.000Z</published>
-    <updated>2020-05-19T03:50:12.870Z</updated>
+    <updated>2020-05-19T03:50:27.627Z</updated>
     
     <summary type="html">
     

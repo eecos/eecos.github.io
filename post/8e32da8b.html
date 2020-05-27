@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?ef3f5d2e3a"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>jira与confluence的简介 | lijiating’s Blog | 凡是挣扎过来的人都是真金不怕火炼的；任何幻灭都不能动摇他们的信仰：因为他们一开始就知道信仰之路和幸福之路全然不同，而他们是不能选选择的，只有往这条路走，别的都是死路。这样的自信不是一朝一夕所能养成的。你绝不能以此期待那些十五岁左右的孩子。在得到这个信念之之前，先得受尽悲痛，流尽眼泪。可是这样是好的，应该要这样……</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="atlassian">
+    <meta name="description" content="jira与confluence的简介">
+<meta name="keywords" content="jira与confluence的简介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jira与confluence的简介">
+<meta property="og:url" content="https://mrjerryli.github.io/post/8e32da8b.html">
+<meta property="og:site_name" content="lijiating’s Blog">
+<meta property="og:description" content="jira与confluence的简介">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/14926993-e78b99a309ef8cbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
+<meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/14926993-4a84e39d7988dcec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
+<meta property="og:updated_time" content="2020-05-27T02:54:34.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jira与confluence的简介">
+<meta name="twitter:description" content="jira与confluence的简介">
+<meta name="twitter:image" content="https:////upload-images.jianshu.io/upload_images/14926993-e78b99a309ef8cbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp">
+    
+        <link rel="alternate" type="application/atom+xml" title="lijiating’s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">李加廷</h5>
+          <a href="mailto:653942945@qq.com" title="653942945@qq.com" class="mail">653942945@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                档案
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/ljtJerry" target="_blank" >
+                <i class="icon icon-lg icon-meetup"></i>
+                码云
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mrjerryli" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">jira与confluence的简介</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">jira与confluence的简介</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-27T02:51:16.000Z" itemprop="datePublished" class="page-time">
+  2020-05-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Test/">Test</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Confluence和jira的使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">Confluence和jira的使用</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-jira与confluence的简介"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">jira与confluence的简介</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-05-27 10:51:16" datetime="2020-05-27T02:51:16.000Z"  itemprop="datePublished">2020-05-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Test/">Test</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="Confluence和jira的使用"><a href="#Confluence和jira的使用" class="headerlink" title="Confluence和jira的使用"></a>Confluence和jira的使用</h2><p>JIRA是Atlassian公司出品的项目与事务管理跟踪工具，被广泛应用于需求收集、流程审批、任务跟踪、项目跟踪、缺陷跟踪、客户服务、和敏捷管理等工作领域。</p>
+<p>Confluence（也就是 wiki ）的使用几乎贯穿了整个敏捷过程，如：在产品设计时编写产品需求，在会议讨论时编写会议笔记，在冲刺结束后编写冲刺回顾……Confluence自身也为这些需求提供了丰富的文档模板。</p>
+<p>画了两张粗糙的思维导图，加强理解</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https:////upload-images.jianshu.io/upload_images/14926993-e78b99a309ef8cbc.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" alt="img" title>
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>jira思维导图</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https:////upload-images.jianshu.io/upload_images/14926993-4a84e39d7988dcec.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" alt="img" title>
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>wiki思维导图</p>
+<p>先预留一个位置，之后还会慢慢补充~~</p>
+<p>附：</p>
+<p>敏捷开发中的一些概念</p>
+<p>scrum team: 整个组织架构中可进行独立开发的最小团队, 一般人数控制在5~10人左右</p>
+<p>sprint：项目开发过程中最小迭代周期，根据同的项目周期不同；现有产品维护1~5天，二次开发5~10，新项目5~30，业务复杂或开发所用语言较多或开发复杂度较高10~45</p>
+<p>point：不可拆分的最小功能点数，1point等于多少小时，可以由项目主管按照项目的实际情况指定。</p>
+<p>Product Backlog：由PO负责管理，将所有epic按优先顺序排列的一个产品需求列表。</p>
+<p>Sprint Backlog：通过Sprint Planning Meeting，由PM、PO、SM从product backlog中挑选出一个或多个Story作为本次迭代完成的目标</p>
+<p>epic：一个包含完成功能的需求描述，可以被拆分为1个或多个stroy，一般有PO划分</p>
+<p>story：一个不可拆分子功能描述，可以被拆分为1个过多个task，一般由PO将epic拆分为story，在Sprint Planning Pre-Plan Meeting中PO、SM确定story是否合理并做相应的调整。</p>
+<p>task：最小可用于开发的任务，在sprint开始时由ST将story拆分为task，并在当前sprint中完成</p>
+<p>product Master(PM)：管理整个项目的整体进度，也可叫做scrum master of scrums.</p>
+<p>product owner(PO)：管理整个项目或多个scrum team的需求，并将需求转换为epic或story，指定软件交付日期，指定交付标准，有权力接受或拒绝开发团队的工作成果</p>
+<p>scrum master(SM)：整体控制一个scrum能过承接的point数；监控每个sprint的整体进度；协调与其他scrum team之间的沟通</p>
+<p>technique leader(TL)：整个项目或多个scrum team或一个scrum team的技术专家，主要负责在开发过程中给出技术解决方案或建议</p>
+<p>scrum team member(ST)：scrum项目成员，主要负责开发，以及将指派给自己的story拆分为task</p>
+<p>Sprint Planning Pre-Plan Meeting：PO、SM确定挑选story为后期sprint做准备，一般提前2个sprint</p>
+<p>Sprint Planning Meeting：在sprint之前PO将下个sprint需要完成的story交付给SM，SM需要根据目前ST的能力确认point数，此时应该确认或拒绝下一个sprint所有需求。</p>
+<p>Sprint start meeting：在sprint的第一天将当前sprint的story指派给相关ST，除非TL提出异议并且征得PO或PM同意，否则所有stroy必须在当前sprint完成。</p>
+<p>Srpint Review Meeting：也叫Srpint Demo Meeting，将这个sprint的成果演示给PO，由PO确认演示内容是否符合交付标准，并提出改善意见。</p>
+<p>Sprint Retrospective Meeting：回顾会议，SM、ST、TL，PO参与对于上一个sprint成果总结，优点继续保持，缺点或缺陷根据实际情况由PO决定是否建立story放入Product Backlog中，在以后或下一个sprint中完善。</p>
+<p>Daily Scrum Meeting：也叫stand up meeting，每天占用5~15分钟汇报、分享、提出问题。特别注意此会议不解决任何问题。</p>
+<p>Scrum of Scurms meeting：大型项目需要，多个scrum team协同开发时，多个Team SM参与讨论会议；对上一个sprint总结汇报，并提出相关意见，如果涉及到代码改善意见，需要请PO确认是否建立story；下一个sprint资源确认，是否需要其他Team协助，是否有人力资源调整等问题。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-05-27T02:54:34.150Z" itemprop="dateUpdated">2020-05-27 10:54:34</time>
+</span><br>
+
+
+        
+        <a href="/post/8e32da8b.html" target="_blank" rel="external">https://mrjerryli.github.io/post/8e32da8b.html</a>
+        
+    </div>
+    <footer>
+        <a href="https://mrjerryli.github.io">
+            <img src="/img/avatar.jpg" alt="李加廷">
+            李加廷
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atlassian/">atlassian</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mrjerryli.github.io/post/8e32da8b.html&title=《jira与confluence的简介》 — lijiating’s Blog&pic=https://mrjerryli.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mrjerryli.github.io/post/8e32da8b.html&title=《jira与confluence的简介》 — lijiating’s Blog&source=lijiating’s Blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mrjerryli.github.io/post/8e32da8b.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jira与confluence的简介》 — lijiating’s Blog&url=https://mrjerryli.github.io/post/8e32da8b.html&via=https://mrjerryli.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mrjerryli.github.io/post/8e32da8b.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/1672ce0a.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">docker搭建redis集群</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "null",
+            appKey: "null",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>李加廷 &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mrjerryli.github.io/post/8e32da8b.html&title=《jira与confluence的简介》 — lijiating’s Blog&pic=https://mrjerryli.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mrjerryli.github.io/post/8e32da8b.html&title=《jira与confluence的简介》 — lijiating’s Blog&source=lijiating’s Blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mrjerryli.github.io/post/8e32da8b.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jira与confluence的简介》 — lijiating’s Blog&url=https://mrjerryli.github.io/post/8e32da8b.html&via=https://mrjerryli.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mrjerryli.github.io/post/8e32da8b.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHklEQVR42u3ay26FMAwFwPv/P023lVrosQ2VSCarqgLCsPD1I59PvI4f6/v/z65Mntm7t7kwMDBeyzgu19kGyZZn158BkrtO98XAwNiAkbzEdaCsXpnjk2CNgYGBMb/mOq3MPwQGBgZGNV3rBdzekzEwMDCSIjZP73oF6j/V4hgYGC9kzF/lub8fmW9gYGC8inEUV6/dnw8YegsDA2NtRrVZPz9a0fsc0ftgYGBsw5gcucibaHkzrpAsYmBgbMOYjyfzoxjzll/0u4GBgfFyRh4WqwG0F8STXQq/GBgYGAsxkgCXw3ohOB9SFmawGBgYSzDmpWy1NZaUxNXUEwMDY21GNS2bUKvNuEIbDgMDY2lG9cxVPnrsvegTo1MMDIy3M/LNqvonYKcJIgYGxtKM6xuajxskfNVjGRgYGDswqgG0iqmG4Orhj19SQwwMjKUZk8ZZrxE2qbMxMDD2YVS3rIbjXmiuhl0MDIwdGL0hZbL9PHw3AzoGBsZyjEnLfoKsppJ/3IWBgbEZo1dMJuVor+mWHHXFwMDYgZEPJnuheVLQRqEZAwNjUcZRXNUXzVt11UOxGBgY+zCqYS5plvUacHmqOip9MTAwXsuovmIV0BteltNHDAyMDRj5sYZ8MJkMIG9DYmBgYNx0zKv3aZI0EQMDAyOpg6vJ5c3HOzAwMDZg5EdLe8nf04U0BgbG2oxeLytnJ0HzrlEBBgbGcowv+UJLqaxkm4cAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=true&web_id=true')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
