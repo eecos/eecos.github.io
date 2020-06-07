@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrjerryli.github.io/"/>
-  <updated>2020-05-27T02:54:34.150Z</updated>
+  <updated>2020-06-07T17:24:00.185Z</updated>
   <id>https://mrjerryli.github.io/</id>
   
   <author>
@@ -17,22 +17,24 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>jira与confluence的简介</title>
-    <link href="https://mrjerryli.github.io/post/8e32da8b.html"/>
-    <id>https://mrjerryli.github.io/post/8e32da8b.html</id>
-    <published>2020-05-27T02:51:16.000Z</published>
-    <updated>2020-05-27T02:54:34.150Z</updated>
+    <title>docker命令</title>
+    <link href="https://mrjerryli.github.io/post/a9214619.html"/>
+    <id>https://mrjerryli.github.io/post/a9214619.html</id>
+    <published>2020-06-06T16:09:27.000Z</published>
+    <updated>2020-06-07T17:24:00.185Z</updated>
     
     <summary type="html">
     
-      jira与confluence的简介
+      docker命令
     
     </summary>
     
-      <category term="Test" scheme="https://mrjerryli.github.io/categories/Test/"/>
+      <category term="Server" scheme="https://mrjerryli.github.io/categories/Server/"/>
+    
+      <category term="Docker" scheme="https://mrjerryli.github.io/categories/Server/Docker/"/>
     
     
-      <category term="atlassian" scheme="https://mrjerryli.github.io/tags/atlassian/"/>
+      <category term="centos" scheme="https://mrjerryli.github.io/tags/centos/"/>
     
   </entry>
   

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 
     
@@ -26,20 +26,21 @@
     
     <meta name="keywords" content="centos">
     <meta name="description" content="docker-compose在线升级">
-<meta name="keywords" content="docker-compose在线升级">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker-compose在线升级">
 <meta property="og:url" content="https://mrjerryli.github.io/post/b82f2049.html">
 <meta property="og:site_name" content="lijiating’s Blog">
 <meta property="og:description" content="docker-compose在线升级">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mrjerryli.github.io/post/b82f2049/WX20200517-121523@2x.png">
 <meta property="og:image" content="https://mrjerryli.github.io/post/b82f2049/WX20200517-121716@2x.png">
 <meta property="og:image" content="https://mrjerryli.github.io/post/b82f2049/WX20200517-121842@2x.png">
-<meta property="og:updated_time" content="2020-05-17T04:20:31.071Z">
+<meta property="article:published_time" content="2020-05-17T04:11:25.000Z">
+<meta property="article:modified_time" content="2020-05-17T04:20:31.071Z">
+<meta property="article:author" content="李加廷">
+<meta property="article:tag" content="docker-compose在线升级">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker-compose在线升级">
-<meta name="twitter:description" content="docker-compose在线升级">
-<meta name="twitter:image" content="https://mrjerryli.github.io/post/b82f2049/WX20200517-121716@2x.png">
+<meta name="twitter:image" content="https://mrjerryli.github.io/post/b82f2049/WX20200517-121523@2x.png">
     
         <link rel="alternate" type="application/atom+xml" title="lijiating’s Blog" href="/atom.xml">
     
@@ -50,7 +51,7 @@
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -201,34 +202,20 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="docker-compose在线升级"><a href="#docker-compose在线升级" class="headerlink" title="docker-compose在线升级"></a>docker-compose在线升级</h2><p>这个比较简单，就三行命令。</p>
 <ul>
-<li><p>获取最新版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
-<p>注意：<br>  其中<code>1.23.2</code>是可以更换为最新的版本号</p>
-</li>
+<li>获取最新版本<pre><code class="hljs shell">curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></pre>
+注意：<br>  其中<code>1.23.2</code>是可以更换为最新的版本号</li>
 </ul>
-{% image 20200517docker-compose在线升级/WX20200517-121523@2x.png '获取最新版本' '' %}
+<p><img src="/post/b82f2049/WX20200517-121523@2x.png" srcset="/img/loading.gif" alt="获取最新版本"></p>
 <ul>
 <li>授权</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">chmod +x /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/post/b82f2049/WX20200517-121716@2x.png" alt="授权" title>
-                </div>
-                <div class="image-caption">授权</div>
-            </figure>
+<pre><code class="hljs shell">chmod +x /usr/local/bin/docker-compose</code></pre>
+<p><img src="/post/b82f2049/WX20200517-121716@2x.png" srcset="/img/loading.gif" alt="授权"></p>
 <ul>
 <li>查看版本</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker-compose --version<br></code></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/post/b82f2049/WX20200517-121842@2x.png" alt="获取最新版本" title>
-                </div>
-                <div class="image-caption">获取最新版本</div>
-            </figure>
+<pre><code class="hljs shell">docker-compose --version</code></pre>
+<p><img src="/post/b82f2049/WX20200517-121842@2x.png" srcset="/img/loading.gif" alt="获取最新版本"></p>
 <p>这样就在线升级完成了，比较简单。</p>
 
         </div>
@@ -262,7 +249,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li></ul>
 
 
             
@@ -427,7 +414,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

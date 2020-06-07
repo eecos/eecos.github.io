@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 
     
@@ -26,17 +26,17 @@
     
     <meta name="keywords" content="springboot">
     <meta name="description" content="springboot-thymeleaf动态模板生成">
-<meta name="keywords" content="springboot-thymeleaf动态模板生成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot-thymeleaf动态模板生成">
 <meta property="og:url" content="https://mrjerryli.github.io/post/457323eb.html">
 <meta property="og:site_name" content="lijiating’s Blog">
 <meta property="og:description" content="springboot-thymeleaf动态模板生成">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T16:56:48.420Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-12T12:13:18.000Z">
+<meta property="article:modified_time" content="2019-10-21T16:56:48.420Z">
+<meta property="article:author" content="李加廷">
+<meta property="article:tag" content="springboot-thymeleaf动态模板生成">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="springboot-thymeleaf动态模板生成">
-<meta name="twitter:description" content="springboot-thymeleaf动态模板生成">
     
         <link rel="alternate" type="application/atom+xml" title="lijiating’s Blog" href="/atom.xml">
     
@@ -47,7 +47,7 @@
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -199,15 +199,37 @@
             <h2 id="springboot-thymeleaf动态模板生成"><a href="#springboot-thymeleaf动态模板生成" class="headerlink" title="springboot-thymeleaf动态模板生成"></a>springboot-thymeleaf动态模板生成</h2><ul>
 <li>thymeleaf动态模板，案例</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java">Map data = <span class="hljs-keyword">new</span> HashMap();<br>    data.put(<span class="hljs-string">"name"</span>, <span class="hljs-string">"jerry"</span>);<br>    data.put(<span class="hljs-string">"email"</span>, email);<br>    data.put(<span class="hljs-string">"url"</span>, <span class="hljs-string">"https://www.lijiating.online/"</span>);<br>    data.put(<span class="hljs-string">"secondairePath"</span>, <span class="hljs-string">"myblog"</span>);<br>    data.put(<span class="hljs-string">"requestId"</span>, <span class="hljs-string">""</span>);<br>SpringTemplateEngine springTemplateEngine = <span class="hljs-keyword">new</span> SpringTemplateEngine();<br>StringTemplateResolver stringTemplateResolver = <span class="hljs-keyword">new</span> StringTemplateResolver();<br>stringTemplateResolver.setCacheable(<span class="hljs-keyword">true</span>);<br>stringTemplateResolver.setTemplateMode(TemplateMode.HTML);<br>            springTemplateEngine.setTemplateResolver(stringTemplateResolver)<br>Context context = <span class="hljs-keyword">new</span> Context();<br>context.setVariables(data);<br>String content = <span class="hljs-string">"&lt;span th:utext=\"$&#123;code&#125;\"&gt;&lt;/span&gt;"</span>;<br>String result = springTemplateEngine.process(content, context);<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs java">Map data = <span class="hljs-keyword">new</span> HashMap();
+    data.put(<span class="hljs-string">"name"</span>, <span class="hljs-string">"jerry"</span>);
+    data.put(<span class="hljs-string">"email"</span>, email);
+    data.put(<span class="hljs-string">"url"</span>, <span class="hljs-string">"https://www.lijiating.online/"</span>);
+    data.put(<span class="hljs-string">"secondairePath"</span>, <span class="hljs-string">"myblog"</span>);
+    data.put(<span class="hljs-string">"requestId"</span>, <span class="hljs-string">""</span>);
+SpringTemplateEngine springTemplateEngine = <span class="hljs-keyword">new</span> SpringTemplateEngine();
+StringTemplateResolver stringTemplateResolver = <span class="hljs-keyword">new</span> StringTemplateResolver();
+stringTemplateResolver.setCacheable(<span class="hljs-keyword">true</span>);
+stringTemplateResolver.setTemplateMode(TemplateMode.HTML);
+            springTemplateEngine.setTemplateResolver(stringTemplateResolver)
+Context context = <span class="hljs-keyword">new</span> Context();
+context.setVariables(data);
+String content = <span class="hljs-string">"&lt;span th:utext=\"$&#123;code&#125;\"&gt;&lt;/span&gt;"</span>;
+String result = springTemplateEngine.process(content, context);</code></pre>
 <ul>
 <li>pom文件引入：</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.thymeleaf<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>thymeleaf<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.0.9.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.thymeleaf<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>thymeleaf<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.0.9.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
 <ul>
 <li>springboot可直接引入：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xaml">&lt;dependency&gt;<br>  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>  &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;<br>  &lt;version&gt;2.0.4.RELEASE&lt;/version&gt;<br>&lt;/dependency&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs xaml">&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;&#x2F;artifactId&gt;
+  &lt;version&gt;2.0.4.RELEASE&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;</code></pre>
 
         </div>
 
@@ -240,7 +262,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li></ul>
 
 
             
@@ -405,7 +427,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

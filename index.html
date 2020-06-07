@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 
     
@@ -26,16 +26,15 @@
     
     <meta name="keywords" content="lijiating">
     <meta name="description" content="lijiating’s Blog">
-<meta name="keywords" content="lijiating">
 <meta property="og:type" content="website">
 <meta property="og:title" content="lijiating’s Blog">
 <meta property="og:url" content="https://mrjerryli.github.io/index.html">
 <meta property="og:site_name" content="lijiating’s Blog">
 <meta property="og:description" content="lijiating’s Blog">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="李加廷">
+<meta property="article:tag" content="lijiating">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lijiating’s Blog">
-<meta name="twitter:description" content="lijiating’s Blog">
     
         <link rel="alternate" type="application/atom+xml" title="lijiating’s Blog" href="/atom.xml">
     
@@ -46,7 +45,7 @@
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -163,14 +162,14 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-jira与confluence的简介"
+            <article id="post-docker命令"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2020-05-27 10:51:16" datetime="2020-05-27T02:51:16.000Z"  itemprop="datePublished">2020-05-27</time>
+        <time class="post-time" title="2020-06-07 00:09:27" datetime="2020-06-06T16:09:27.000Z"  itemprop="datePublished">2020-06-07</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Test/">Test</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Server/">Server</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Server/Docker/">Docker</a></li></ul></li></ul>
 
 
 
@@ -181,7 +180,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/post/8e32da8b.html">jira与confluence的简介</a>
+      <a class="post-title-link" href="/post/a9214619.html">docker命令</a>
     </h3>
   
 
@@ -191,18 +190,28 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Confluence和jira的使用JIRA是Atlassian公司出品的项目与事务管理跟踪工具，被广泛应用于需求收集、流程审批、任务跟踪、项目跟踪、缺陷跟踪、客户服务、和敏捷管理等工作领域。
-Confluence（也就是 wiki ）的使用几乎贯穿了整个敏捷过程，如：在产品设计时编写产品需求，在会议讨论时编写会议笔记，在冲刺结束后编写冲刺回顾……Confluence自身也为这些需求提供了丰...
+        docker 图文介绍
+                
+                    
+                    
+                
+                docker
+            
+
+                
+                    
+                    
+             ...
     
 
-        <a href="/post/8e32da8b.html" class="post-more waves-effect waves-button">
+        <a href="/post/a9214619.html" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atlassian/">atlassian</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li></ul>
 
     </div>
     
@@ -251,7 +260,7 @@ Confluence（也就是 wiki ）的使用几乎贯穿了整个敏捷过程，如�
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li></ul>
 
     </div>
     
@@ -298,7 +307,10 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
 
 这里采用官方镜像提供默认配置，可根据docker-compose配置说明做调整
 
-12345678910111213141516171819...
+
+version: &#39;3.1&#39;
+
+serv...
     
 
         <a href="/post/7b97a5e1.html" class="post-more waves-effect waves-button">
@@ -308,7 +320,7 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li></ul>
 
     </div>
     
@@ -347,9 +359,8 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
     
         docker-compose在线升级这个比较简单，就三行命令。
 
-获取最新版本
-1curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-注意：  其中1.23.2是可...
+获取最新版本curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+注意：  其中1.23.2是可以更...
     
 
         <a href="/post/b82f2049.html" class="post-more waves-effect waves-button">
@@ -359,7 +370,7 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li></ul>
 
     </div>
     
@@ -397,12 +408,15 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
 
     
         Let’s Encrypt证书申请、阿里云配置Let’s Encrypt证书一、证书申请申请入口：https://letsencrypt.osfipin.com/申请成功，如下：
-                
-                    
-                    
-                
-                证书
-            ...
+点击查查，可进行证书的下载
+解压后得到六个文件
+
+
+压缩包文件说明
+
+private.pem 密钥，可更改后缀为key
+fullchain.crt 完整证书，可更改后缀为pem
+certificate.pfx II...
     
 
         <a href="/post/7bd4d456.html" class="post-more waves-effect waves-button">
@@ -412,7 +426,7 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li></ul>
 
     </div>
     
@@ -450,7 +464,10 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
 
     
         MAC使用homeBrew安装Redis一般买了macbook第一件事就是把homeBrew和iterm2装上,它们俩的组合可以实现绝大多数的软件安装。网上有很多教程安装它们的，关于homeBrew的操作命令如下:
-1234567brew search **  //查找某个软件包brew list  //列出已经安装的软件的包brew install ** //安装某个软件包,默认安装的是稳...
+brew search **  //查找某个软件包
+brew list  //列出已经安装的软件的包
+brew install ** //安装某个软件包,默认安装的是稳定版本
+b...
     
 
         <a href="/post/63201c18.html" class="post-more waves-effect waves-button">
@@ -460,7 +477,7 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li></ul>
 
     </div>
     
@@ -500,7 +517,11 @@ docker-compose分布式管理组件，具体安装以及使用方法见github项
         springboot-thymeleaf动态模板生成
 thymeleaf动态模板，案例
 
-123456789101112131415Map data = new HashMap();    data.put("name", "jerry");    data.put("email", email);    data.put("url", "https://www.lijiating.onli...
+Map data = new HashMap();
+    data.put("name", "jerry");
+    data.put("email", email);
+    data.put("url", "https://www.lijiating.online/");
+    data.pu...
     
 
         <a href="/post/457323eb.html" class="post-more waves-effect waves-button">
@@ -510,7 +531,7 @@ thymeleaf动态模板，案例
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li></ul>
 
     </div>
     
@@ -550,7 +571,11 @@ thymeleaf动态模板，案例
         Mac 查看端口占用及杀死进程
 查看端口占用情况
 
-12345# jerry in ~ [14:04:53] C:1$ lsof -i :18088COMMAND   PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAMEjava    27191 lijiating  287u  IPv6 0xcebad4dccbf6...
+# jerry in ~ [14:04:53] C:1
+$ lsof -i :18088
+
+COMMAND   PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+java    27191 lijiating  287u  IPv6 0xcebad4dccbf6e...
     
 
         <a href="/post/87630688.html" class="post-more waves-effect waves-button">
@@ -560,7 +585,7 @@ thymeleaf动态模板，案例
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
 
     </div>
     
@@ -603,7 +628,10 @@ thymeleaf动态模板，案例
 
 查看brew info zookeeper
 
-1234$ brew info zookeeperzookeeper: stable 3.4.12 (bottled), HEADCentralized server for distributed coordination of serviceshttps://zookeeper.apac...
+$ brew info zookeeper
+zookeeper: stable 3.4.12 (bottled), HEAD
+Centralized server for distributed coordination of services
+https://zookeeper.apach...
     
 
         <a href="/post/3ad834c9.html" class="post-more waves-effect waves-button">
@@ -613,7 +641,7 @@ thymeleaf动态模板，案例
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zookeeper/">zookeeper</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zookeeper/" rel="tag">zookeeper</a></li></ul>
 
     </div>
     
@@ -672,7 +700,7 @@ yarn config set registry https://registry.yarnpkg.com
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
 
     </div>
     
@@ -709,7 +737,7 @@ yarn config set registry https://registry.yarnpkg.com
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     
 
     
@@ -26,17 +26,17 @@
     
     <meta name="keywords" content="Mac">
     <meta name="description" content="MAC使用homeBrew安装Redis">
-<meta name="keywords" content="MAC使用homeBrew安装Redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MAC使用homeBrew安装Redis">
 <meta property="og:url" content="https://mrjerryli.github.io/post/63201c18.html">
 <meta property="og:site_name" content="lijiating’s Blog">
 <meta property="og:description" content="MAC使用homeBrew安装Redis">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T16:58:13.026Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-21T16:55:09.000Z">
+<meta property="article:modified_time" content="2019-10-21T16:58:13.026Z">
+<meta property="article:author" content="李加廷">
+<meta property="article:tag" content="MAC使用homeBrew安装Redis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MAC使用homeBrew安装Redis">
-<meta name="twitter:description" content="MAC使用homeBrew安装Redis">
     
         <link rel="alternate" type="application/atom+xml" title="lijiating’s Blog" href="/atom.xml">
     
@@ -47,7 +47,7 @@
     <!-- custom head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
     <div id="loading" class="active"></div>
@@ -197,16 +197,41 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="MAC使用homeBrew安装Redis"><a href="#MAC使用homeBrew安装Redis" class="headerlink" title="MAC使用homeBrew安装Redis"></a>MAC使用homeBrew安装Redis</h1><p><em>一般买了macbook第一件事就是把homeBrew和iterm2装上,它们俩的组合可以实现绝大多数的软件安装。网上有很多教程安装它们的，关于homeBrew的操作命令如下:</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java">brew search **  <span class="hljs-comment">//查找某个软件包</span><br>brew list  <span class="hljs-comment">//列出已经安装的软件的包</span><br>brew install ** <span class="hljs-comment">//安装某个软件包,默认安装的是稳定版本</span><br>brew uninstall **<span class="hljs-comment">//卸载某个软件的包</span><br>brew upgrade ** <span class="hljs-comment">//更新某个软件包</span><br>brew info ** <span class="hljs-comment">//查看指定软件包的说明</span><br>brew cache clean <span class="hljs-comment">//清理缓存</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs java">brew search **  <span class="hljs-comment">//查找某个软件包</span>
+brew list  <span class="hljs-comment">//列出已经安装的软件的包</span>
+brew install ** <span class="hljs-comment">//安装某个软件包,默认安装的是稳定版本</span>
+brew uninstall **<span class="hljs-comment">//卸载某个软件的包</span>
+brew upgrade ** <span class="hljs-comment">//更新某个软件包</span>
+brew info ** <span class="hljs-comment">//查看指定软件包的说明</span>
+brew cache clean <span class="hljs-comment">//清理缓存</span></code></pre>
 <p><em>现在我们尝试在mac上通过homeBrew安装redis</em></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"> brew search redis <br> <span class="hljs-comment">//出现如下</span><br> ==&gt; Searching local taps...<br>hiredis         redis           redis-leveldb   redis@<span class="hljs-number">2.8</span>       redis@<span class="hljs-number">3.2</span><br>==&gt; Searching taps on GitHub...<br>homebrew/cask/redis-app<br>==&gt; Searching blacklisted, migrated <span class="hljs-keyword">and</span> deleted formulae...<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs php"> brew search redis 
+ <span class="hljs-comment">//出现如下</span>
+ ==&gt; Searching local taps...
+hiredis         redis           redis-leveldb   redis@<span class="hljs-number">2.8</span>       redis@<span class="hljs-number">3.2</span>
+==&gt; Searching taps on GitHub...
+homebrew/cask/redis-app
+==&gt; Searching blacklisted, migrated <span class="hljs-keyword">and</span> deleted formulae...</code></pre>
 <p><em>安装redis3.2版本</em></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">brew</span> <span class="hljs-selector-tag">install</span> <span class="hljs-selector-tag">redis</span>@<span class="hljs-keyword">3</span>.<span class="hljs-keyword">2</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs css"><span class="hljs-selector-tag">brew</span> <span class="hljs-selector-tag">install</span> <span class="hljs-selector-tag">redis</span><span class="hljs-keyword">@3</span>.2</code></pre>
 <p><em>安装完成提示如下</em></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs php">//把redis的环境变量配置到.zshrc中<br>If you need to have redis@3.2 first in your PATH run:<br>  echo 'export PATH="/usr/local/opt/redis@3.2/bin:$PATH"' &gt;&gt; ~/.zshrc<br><br><br>To have launchd start redis@3.2 now and restart at login:<br>//使用launchctl brew启动<br>  brew services start redis@3.2<br>  ### 使用配置文件启动<br>Or, if you don't want/need a background service you can just run:<br>  redis-server /usr/local/etc/redis.conf<br>==&gt; Summary<br>🍺  /usr/local/Cellar/redis@3.2/3.2.12: 13 files, 1.7MB<br></code></pre></td></tr></table></figure>
-<p><em>/usr/local/etc 下修改redis.config找到daemonize no改成yes 以守护进程的方式启动配置环境变量echo ‘export PATH=”<a href="mailto:/usr/local/opt/redis@3.2" target="_blank" rel="noopener">/usr/local/opt/redis@3.2</a>/bin:$PATH”‘ &gt;&gt; ~/.zshrc</em></p>
-<p><em>启动:brew services start <a href="mailto:redis@3.2" target="_blank" rel="noopener">redis@3.2</a>或者使用redis-server /usr/local/etc/redis.conf启动查看进程ps axu | grep redis</em></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">isole</span>            84721   0<span class="hljs-selector-class">.0</span>  0<span class="hljs-selector-class">.0</span>  4267768    900 <span class="hljs-selector-tag">s000</span>  <span class="hljs-selector-tag">S</span>+   10<span class="hljs-selector-pseudo">:08</span>上午   0<span class="hljs-selector-pseudo">:00.00</span> <span class="hljs-selector-tag">grep</span> <span class="hljs-selector-tag">redis</span><br><span class="hljs-selector-tag">isole</span>            84501   0<span class="hljs-selector-class">.0</span>  0<span class="hljs-selector-class">.0</span>  4309180   1568   ??  <span class="hljs-selector-tag">Ss</span>   10<span class="hljs-selector-pseudo">:06</span>上午   0<span class="hljs-selector-pseudo">:00.07</span> <span class="hljs-selector-tag">redis-server</span> 127<span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.1</span><span class="hljs-selector-pseudo">:6379</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs php"><span class="hljs-comment">//把redis的环境变量配置到.zshrc中</span>
+<span class="hljs-keyword">If</span> you need to have redis@<span class="hljs-number">3.2</span> first in your PATH run:
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">'export PATH="/usr/local/opt/redis@3.2/bin:$PATH"'</span> &gt;&gt; ~/.zshrc
+
+
+To have launchd start redis@<span class="hljs-number">3.2</span> now <span class="hljs-keyword">and</span> restart at login:
+<span class="hljs-comment">//使用launchctl brew启动</span>
+  brew services start redis@<span class="hljs-number">3.2</span>
+  <span class="hljs-comment">### 使用配置文件启动</span>
+<span class="hljs-keyword">Or</span>, <span class="hljs-keyword">if</span> you don<span class="hljs-string">'t want/need a background service you can just run:</span>
+<span class="hljs-string">  redis-server /usr/local/etc/redis.conf</span>
+<span class="hljs-string">==&gt; Summary</span>
+<span class="hljs-string">🍺  /usr/local/Cellar/redis@3.2/3.2.12: 13 files, 1.7MB</span></code></pre>
+<p><em>/usr/local/etc 下修改redis.config找到daemonize no改成yes 以守护进程的方式启动配置环境变量echo ‘export PATH=”<a href="mailto:/usr/local/opt/redis@3.2">/usr/local/opt/redis@3.2</a>/bin:$PATH”‘ &gt;&gt; ~/.zshrc</em></p>
+<p><em>启动:brew services start <a href="mailto:redis@3.2">redis@3.2</a>或者使用redis-server /usr/local/etc/redis.conf启动查看进程ps axu | grep redis</em></p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">isole</span>            84721   0<span class="hljs-selector-class">.0</span>  0<span class="hljs-selector-class">.0</span>  4267768    900 <span class="hljs-selector-tag">s000</span>  <span class="hljs-selector-tag">S</span>+   10<span class="hljs-selector-pseudo">:08</span>上午   0<span class="hljs-selector-pseudo">:00.00</span> <span class="hljs-selector-tag">grep</span> <span class="hljs-selector-tag">redis</span>
+<span class="hljs-selector-tag">isole</span>            84501   0<span class="hljs-selector-class">.0</span>  0<span class="hljs-selector-class">.0</span>  4309180   1568   ??  <span class="hljs-selector-tag">Ss</span>   10<span class="hljs-selector-pseudo">:06</span>上午   0<span class="hljs-selector-pseudo">:00.07</span> <span class="hljs-selector-tag">redis-server</span> 127<span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.1</span><span class="hljs-selector-pseudo">:6379</span></code></pre>
 <p><em>连接客户端:redis-cli -h 127.0.0.1 -p 6379如下:127.0.0.1:6379&gt; get(“123”)</em></p>
 <p><em>关闭redis-cli shutdown杀死sudo pkill redis-server</em></p>
 <h5 id="关于redis-conf配置文件的说明"><a href="#关于redis-conf配置文件的说明" class="headerlink" title="关于redis.conf配置文件的说明"></a><em>关于redis.conf配置文件的说明</em></h5><blockquote>
@@ -251,7 +276,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li></ul>
 
 
             
@@ -416,7 +441,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
