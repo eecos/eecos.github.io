@@ -199,158 +199,18 @@
             <h1 id="Docker-compose部署redis-cluster集群"><a href="#Docker-compose部署redis-cluster集群" class="headerlink" title="Docker-compose部署redis-cluster集群"></a>Docker-compose部署redis-cluster集群</h1><p>参考链接：<a href="https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/b7dea62bcd8b">https://www.jianshu.com/p/b7dea62bcd8b</a></p>
 <p>参考镜像：<a href="https://link.zhihu.com/?target=https%3A//github.com/publicisworldwide/docker-stacks/tree/master/oracle-linux/environments/storage/redis-cluster">https://github.com/publicisworldwide/docker-stacks/tree/master/oracle-linux/environments/storage/redis-cluster</a></p>
 <p>1.创建数据目录</p>
-<pre><code class="hljs bash">root@rede:<span class="hljs-comment"># pwd</span>
-/data/redis
-root@rede:<span class="hljs-comment"># mkdir 700&#123;1..6&#125; ##这个目录和下边yml文件的volumes对应</span>
-root@rede:<span class="hljs-comment"># mkdir 700&#123;1..6&#125;/data  </span>
-root@rede:<span class="hljs-comment"># ls </span>
-7001  7002  7003  7004  7005  7006  docker-compose.yml</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@rede:<span class="hljs-comment"># pwd</span><br>/data/redis<br>root@rede:<span class="hljs-comment"># mkdir 700&#123;1..6&#125; ##这个目录和下边yml文件的volumes对应</span><br>root@rede:<span class="hljs-comment"># mkdir 700&#123;1..6&#125;/data  </span><br>root@rede:<span class="hljs-comment"># ls </span><br>7001  7002  7003  7004  7005  7006  docker-compose.yml<br></code></pre></td></tr></table></figure>
 <p>2.创建一个docker-compose.yml文件，内容如下：</p>
-<pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3'</span>
-
-<span class="hljs-attr">services:</span>
- <span class="hljs-attr">redis1:</span>
-  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span>
-  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span>
-  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
-  <span class="hljs-attr">volumes:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7001/data:/data</span>
-  <span class="hljs-attr">environment:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7001</span>
-
- <span class="hljs-attr">redis2:</span>
-  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span>
-  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span>
-  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
-  <span class="hljs-attr">volumes:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7002/data:/data</span>
-  <span class="hljs-attr">environment:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7002</span>
-
- <span class="hljs-attr">redis3:</span>
-  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span>
-  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span>
-  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
-  <span class="hljs-attr">volumes:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7003/data:/data</span>
-  <span class="hljs-attr">environment:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7003</span>
-
- <span class="hljs-attr">redis4:</span>
-  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span>
-  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span>
-  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
-  <span class="hljs-attr">volumes:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7004/data:/data</span>
-  <span class="hljs-attr">environment:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7004</span>
-
- <span class="hljs-attr">redis5:</span>
-  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span>
-  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span>
-  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
-  <span class="hljs-attr">volumes:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7005/data:/data</span>
-  <span class="hljs-attr">environment:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7005</span>
-
- <span class="hljs-attr">redis6:</span>
-  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span>
-  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span>
-  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span>
-  <span class="hljs-attr">volumes:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7006/data:/data</span>
-  <span class="hljs-attr">environment:</span>
-   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7006</span></code></pre>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3'</span><br><br><span class="hljs-attr">services:</span><br> <span class="hljs-attr">redis1:</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span><br>  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span><br>  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>  <span class="hljs-attr">volumes:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7001/data:/data</span><br>  <span class="hljs-attr">environment:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7001</span><br><br> <span class="hljs-attr">redis2:</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span><br>  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span><br>  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>  <span class="hljs-attr">volumes:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7002/data:/data</span><br>  <span class="hljs-attr">environment:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7002</span><br><br> <span class="hljs-attr">redis3:</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span><br>  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span><br>  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>  <span class="hljs-attr">volumes:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7003/data:/data</span><br>  <span class="hljs-attr">environment:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7003</span><br><br> <span class="hljs-attr">redis4:</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span><br>  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span><br>  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>  <span class="hljs-attr">volumes:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7004/data:/data</span><br>  <span class="hljs-attr">environment:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7004</span><br><br> <span class="hljs-attr">redis5:</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span><br>  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span><br>  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>  <span class="hljs-attr">volumes:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7005/data:/data</span><br>  <span class="hljs-attr">environment:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7005</span><br><br> <span class="hljs-attr">redis6:</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">publicisworldwide/redis-cluster</span><br>  <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span><br>  <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>  <span class="hljs-attr">volumes:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">/data/redis/7006/data:/data</span><br>  <span class="hljs-attr">environment:</span><br>   <span class="hljs-bullet">-</span> <span class="hljs-string">REDIS_PORT=7006</span><br></code></pre></td></tr></table></figure>
 <p>这里用的别人一个现成的镜像 publicisworldwide/redis-cluster ，自己制作也可以，后续会发布制作过程，不过不建议自己做，有什么需要更改的可以在现有的镜像基础上进行更改之后commit。镜像可以自己下载，也可以等启动服务的时候他自动下载。</p>
 <p>这里用的是host网络模式，redis挂载到之前创建的目录下。</p>
 <p>如果不想使用主机模式可以文章开头的链接，具体我这里就不写了，自己看。至于docker-compose的安装网上一大堆文章，这里不赘述。</p>
 <p>3.创建文件之后，启动服务</p>
-<pre><code class="hljs bash">root@rede: docker-compose up -d 
-Creating redis_redis1_1 ... <span class="hljs-keyword">done</span>
-Creating redis_redis5_1 ... <span class="hljs-keyword">done</span>
-Creating redis_redis4_1 ... <span class="hljs-keyword">done</span>
-Creating redis_redis3_1 ... <span class="hljs-keyword">done</span>
-Creating redis_redis6_1 ... <span class="hljs-keyword">done</span>
-Creating redis_redis2_1 ... <span class="hljs-keyword">done</span> 
-root@rede: docker-compose ps 
-     Name                   Command               State   Ports
----------------------------------------------------------------
-redis_redis1_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           
-redis_redis2_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           
-redis_redis3_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           
-redis_redis4_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           
-redis_redis5_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           
-redis_redis6_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@rede: docker-compose up -d <br>Creating redis_redis1_1 ... <span class="hljs-keyword">done</span><br>Creating redis_redis5_1 ... <span class="hljs-keyword">done</span><br>Creating redis_redis4_1 ... <span class="hljs-keyword">done</span><br>Creating redis_redis3_1 ... <span class="hljs-keyword">done</span><br>Creating redis_redis6_1 ... <span class="hljs-keyword">done</span><br>Creating redis_redis2_1 ... <span class="hljs-keyword">done</span> <br>root@rede: docker-compose ps <br>     Name                   Command               State   Ports<br>---------------------------------------------------------------<br>redis_redis1_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           <br>redis_redis2_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           <br>redis_redis3_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           <br>redis_redis4_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           <br>redis_redis5_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up           <br>redis_redis6_1   /usr/<span class="hljs-built_in">local</span>/bin/entrypoint. ...   Up<br></code></pre></td></tr></table></figure>
 <p>状态都为Up，说明服务均正常启动，如果有状态不正常的容器，看看自己服务器的端口是不是被占用了。</p>
 <p>4.redis-cluster集群配置</p>
 <p>上述只是启动了6个redis容器，并没有设置集群，随便进入一个redis容器，执行下面的命令，IP替换成自己宿主机的IP</p>
-<pre><code class="hljs text">root@rede:&#x2F;data&#x2F;redis                                                                                                                                                             
-▶ docker ps        
-CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS              PORTS                                        NAMES
-a0c7047c2a0e        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis3_1
-f165a7c962ca        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis1_1
-8ce8ec23974e        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis4_1
-1c37f7b71a21        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis6_1
-810b0ff90710        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis2_1
-e5a38e1cc280        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis5_1
-df94ddfb5d1f        zookeeper:3.4.11                  &quot;&#x2F;docker-entrypoint.…&quot;   20 hours ago        Up 20 hours         2888&#x2F;tcp, 3888&#x2F;tcp, 0.0.0.0:2182-&gt;2181&#x2F;tcp   zookeeper_2
-5eb43213b27a        zookeeper:3.4.11                  &quot;&#x2F;docker-entrypoint.…&quot;   20 hours ago        Up 20 hours         2888&#x2F;tcp, 3888&#x2F;tcp, 0.0.0.0:2183-&gt;2181&#x2F;tcp   zookeeper_3
-d17a6180907e        zookeeper:3.4.11                  &quot;&#x2F;docker-entrypoint.…&quot;   20 hours ago        Up 20 hours         2888&#x2F;tcp, 0.0.0.0:2181-&gt;2181&#x2F;tcp, 3888&#x2F;tcp   zookeeper_1
-
-
-root@rede:# docker exec -ti d3a904cc0d5a bash 
-root@rede:&#x2F;data# redis-cli --cluster create 192.168.1.100:7001 192.168.1.100:7002 192.168.1.100:7003 192.168.1.100:7004 192.168.1.100:7005 192.168.1.100:7006 --cluster-replicas 1
-&gt;&gt;&gt; Performing hash slots allocation on 6 nodes...
-Master[0] -&gt; Slots 0 - 5460
-Master[1] -&gt; Slots 5461 - 10922
-Master[2] -&gt; Slots 10923 - 16383
-Adding replica 192.168.1.100:7004 to 192.168.1.100:7001
-Adding replica 192.168.1.100:7005 to 192.168.1.100:7002
-Adding replica 192.168.1.100:7006 to 192.168.1.100:7003
-&gt;&gt;&gt; Trying to optimize slaves allocation for anti-affinity
-[WARNING] Some slaves are in the same host as their master
-M: 7237efa105ff4246c02da08c0e65c18246755f2f 192.168.1.100:7001
-   slots:[0-5460] (5461 slots) master
-M: 241d6eb2abcd9a6d41db5231fcd80fac1d452bee 192.168.1.100:7002
-   slots:[5461-10922] (5462 slots) master
-M: 493083f2733bc181295f5b9a9fa9bc6fdf821958 192.168.1.100:7003
-   slots:[10923-16383] (5461 slots) master
-S: b60ef6cbea0ae06566d17db4a1b4452e56543419 192.168.1.100:7004
-   replicates 241d6eb2abcd9a6d41db5231fcd80fac1d452bee
-S: b48e546e963f694eac91d49b285040bb2bec5513 192.168.1.100:7005
-   replicates 493083f2733bc181295f5b9a9fa9bc6fdf821958
-S: 259de2d6be917e64cdc01604521da45cc1f8d842 192.168.1.100:7006
-   replicates 7237efa105ff4246c02da08c0e65c18246755f2f
-Can I set the above configuration? (type &#39;yes&#39; to accept): yes
-&gt;&gt;&gt; Nodes configuration updated
-&gt;&gt;&gt; Assign a different config epoch to each node
-&gt;&gt;&gt; Sending CLUSTER MEET messages to join the cluster
-Waiting for the cluster to join
-....
-&gt;&gt;&gt; Performing Cluster Check (using node 192.168.1.100:7001)
-M: 7237efa105ff4246c02da08c0e65c18246755f2f 192.168.1.100:7001
-   slots:[0-5460] (5461 slots) master
-   1 additional replica(s)
-M: 241d6eb2abcd9a6d41db5231fcd80fac1d452bee 192.168.1.100:7002
-   slots:[5461-10922] (5462 slots) master
-   1 additional replica(s)
-M: 493083f2733bc181295f5b9a9fa9bc6fdf821958 192.168.1.100:7003
-   slots:[10923-16383] (5461 slots) master
-   1 additional replica(s)
-S: b60ef6cbea0ae06566d17db4a1b4452e56543419 192.168.1.100:7004
-   slots: (0 slots) slave
-   replicates 241d6eb2abcd9a6d41db5231fcd80fac1d452bee
-S: 259de2d6be917e64cdc01604521da45cc1f8d842 192.168.1.100:7006
-   slots: (0 slots) slave
-   replicates 7237efa105ff4246c02da08c0e65c18246755f2f
-S: b48e546e963f694eac91d49b285040bb2bec5513 192.168.1.100:7005
-   slots: (0 slots) slave
-   replicates 493083f2733bc181295f5b9a9fa9bc6fdf821958
-[OK] All nodes agree about slots configuration.
-&gt;&gt;&gt; Check for open slots...
-&gt;&gt;&gt; Check slots coverage...
-[OK] All 16384 slots covered.</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs text">root@rede:&#x2F;data&#x2F;redis                                                                                                                                                             <br>▶ docker ps        <br>CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS              PORTS                                        NAMES<br>a0c7047c2a0e        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis3_1<br>f165a7c962ca        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis1_1<br>8ce8ec23974e        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis4_1<br>1c37f7b71a21        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis6_1<br>810b0ff90710        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis2_1<br>e5a38e1cc280        publicisworldwide&#x2F;redis-cluster   &quot;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;entr…&quot;   2 minutes ago       Up 2 minutes                                                     redis_redis5_1<br>df94ddfb5d1f        zookeeper:3.4.11                  &quot;&#x2F;docker-entrypoint.…&quot;   20 hours ago        Up 20 hours         2888&#x2F;tcp, 3888&#x2F;tcp, 0.0.0.0:2182-&gt;2181&#x2F;tcp   zookeeper_2<br>5eb43213b27a        zookeeper:3.4.11                  &quot;&#x2F;docker-entrypoint.…&quot;   20 hours ago        Up 20 hours         2888&#x2F;tcp, 3888&#x2F;tcp, 0.0.0.0:2183-&gt;2181&#x2F;tcp   zookeeper_3<br>d17a6180907e        zookeeper:3.4.11                  &quot;&#x2F;docker-entrypoint.…&quot;   20 hours ago        Up 20 hours         2888&#x2F;tcp, 0.0.0.0:2181-&gt;2181&#x2F;tcp, 3888&#x2F;tcp   zookeeper_1<br><br><br>root@rede:# docker exec -ti d3a904cc0d5a bash <br>root@rede:&#x2F;data# redis-cli --cluster create 192.168.1.100:7001 192.168.1.100:7002 192.168.1.100:7003 192.168.1.100:7004 192.168.1.100:7005 192.168.1.100:7006 --cluster-replicas 1<br>&gt;&gt;&gt; Performing hash slots allocation on 6 nodes...<br>Master[0] -&gt; Slots 0 - 5460<br>Master[1] -&gt; Slots 5461 - 10922<br>Master[2] -&gt; Slots 10923 - 16383<br>Adding replica 192.168.1.100:7004 to 192.168.1.100:7001<br>Adding replica 192.168.1.100:7005 to 192.168.1.100:7002<br>Adding replica 192.168.1.100:7006 to 192.168.1.100:7003<br>&gt;&gt;&gt; Trying to optimize slaves allocation for anti-affinity<br>[WARNING] Some slaves are in the same host as their master<br>M: 7237efa105ff4246c02da08c0e65c18246755f2f 192.168.1.100:7001<br>   slots:[0-5460] (5461 slots) master<br>M: 241d6eb2abcd9a6d41db5231fcd80fac1d452bee 192.168.1.100:7002<br>   slots:[5461-10922] (5462 slots) master<br>M: 493083f2733bc181295f5b9a9fa9bc6fdf821958 192.168.1.100:7003<br>   slots:[10923-16383] (5461 slots) master<br>S: b60ef6cbea0ae06566d17db4a1b4452e56543419 192.168.1.100:7004<br>   replicates 241d6eb2abcd9a6d41db5231fcd80fac1d452bee<br>S: b48e546e963f694eac91d49b285040bb2bec5513 192.168.1.100:7005<br>   replicates 493083f2733bc181295f5b9a9fa9bc6fdf821958<br>S: 259de2d6be917e64cdc01604521da45cc1f8d842 192.168.1.100:7006<br>   replicates 7237efa105ff4246c02da08c0e65c18246755f2f<br>Can I set the above configuration? (type &#39;yes&#39; to accept): yes<br>&gt;&gt;&gt; Nodes configuration updated<br>&gt;&gt;&gt; Assign a different config epoch to each node<br>&gt;&gt;&gt; Sending CLUSTER MEET messages to join the cluster<br>Waiting for the cluster to join<br>....<br>&gt;&gt;&gt; Performing Cluster Check (using node 192.168.1.100:7001)<br>M: 7237efa105ff4246c02da08c0e65c18246755f2f 192.168.1.100:7001<br>   slots:[0-5460] (5461 slots) master<br>   1 additional replica(s)<br>M: 241d6eb2abcd9a6d41db5231fcd80fac1d452bee 192.168.1.100:7002<br>   slots:[5461-10922] (5462 slots) master<br>   1 additional replica(s)<br>M: 493083f2733bc181295f5b9a9fa9bc6fdf821958 192.168.1.100:7003<br>   slots:[10923-16383] (5461 slots) master<br>   1 additional replica(s)<br>S: b60ef6cbea0ae06566d17db4a1b4452e56543419 192.168.1.100:7004<br>   slots: (0 slots) slave<br>   replicates 241d6eb2abcd9a6d41db5231fcd80fac1d452bee<br>S: 259de2d6be917e64cdc01604521da45cc1f8d842 192.168.1.100:7006<br>   slots: (0 slots) slave<br>   replicates 7237efa105ff4246c02da08c0e65c18246755f2f<br>S: b48e546e963f694eac91d49b285040bb2bec5513 192.168.1.100:7005<br>   slots: (0 slots) slave<br>   replicates 493083f2733bc181295f5b9a9fa9bc6fdf821958<br>[OK] All nodes agree about slots configuration.<br>&gt;&gt;&gt; Check for open slots...<br>&gt;&gt;&gt; Check slots coverage...<br>[OK] All 16384 slots covered.<br></code></pre></td></tr></table></figure>
 <p>至此，基于docker部署的redis-cluster集群就已经完成</p>
 
         </div>

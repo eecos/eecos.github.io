@@ -202,62 +202,24 @@
 <ul>
 <li>查看brew info zookeeper</li>
 </ul>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> brew info zookeeper</span>
-zookeeper: stable 3.4.12 (bottled), HEAD
-Centralized server for distributed coordination of services
-https://zookeeper.apache.org/</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> brew info zookeeper</span><br>zookeeper: stable 3.4.12 (bottled), HEAD<br>Centralized server for distributed coordination of services<br>https://zookeeper.apache.org/<br></code></pre></td></tr></table></figure>
 <ul>
 <li>安装brew install zookeeper</li>
 </ul>
-<pre><code class="hljs shell"><span class="hljs-meta"> $</span><span class="bash"> brew install zookeeper</span>
- ==&gt; Downloading https://homebrew.bintray.com/bottles/zookeeper-3.4.12.high_sierr
-<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">##### ################################################################## 100.0%</span></span>
-==&gt; Pouring zookeeper-3.4.12.high_sierra.bottle.tar.gz
-==&gt; Caveats
-To have launchd start zookeeper now and restart at login:
-  brew services start zookeeper
-Or, if you don't want/need a background service you can just run:
-  zkServer start</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta"> $</span><span class="bash"> brew install zookeeper</span><br> ==&gt; Downloading https://homebrew.bintray.com/bottles/zookeeper-3.4.12.high_sierr<br><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">##### ################################################################## 100.0%</span></span><br>==&gt; Pouring zookeeper-3.4.12.high_sierra.bottle.tar.gz<br>==&gt; Caveats<br>To have launchd start zookeeper now and restart at login:<br>  brew services start zookeeper<br>Or, if you don't want/need a background service you can just run:<br>  zkServer start<br></code></pre></td></tr></table></figure>
 <ol start="2">
 <li>安装后，在/usr/local/etc/zookeeper/ 中可查看配置</li>
 </ol>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls /usr/<span class="hljs-built_in">local</span>/etc/zookeeper/</span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls /usr/<span class="hljs-built_in">local</span>/etc/zookeeper/</span><br></code></pre></td></tr></table></figure>
 <ul>
 <li><p>安装后，在<code>/usr/local/etc/zookeeper/</code> 已经有了缺省配置</p>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls /usr/<span class="hljs-built_in">local</span>/etc/zookeeper/</span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls /usr/<span class="hljs-built_in">local</span>/etc/zookeeper/</span><br></code></pre></td></tr></table></figure>
 <ul>
 <li><p>查看配置文件</p>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> less -N /usr/<span class="hljs-built_in">local</span>/etc/zookeeper/zoo.cfg</span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> less -N /usr/<span class="hljs-built_in">local</span>/etc/zookeeper/zoo.cfg</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>配置文件如下</p>
-<pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> The number of milliseconds of each tick</span>
-tickTime=2000
-<span class="hljs-meta">#</span><span class="bash"> The number of ticks that the initial </span>
-<span class="hljs-meta">#</span><span class="bash"> synchronization phase can take</span>
-initLimit=10
-<span class="hljs-meta">#</span><span class="bash"> The number of ticks that can pass between </span>
-<span class="hljs-meta">#</span><span class="bash"> sending a request and getting an acknowledgement</span>
-syncLimit=5
-<span class="hljs-meta">#</span><span class="bash"> the directory <span class="hljs-built_in">where</span> the snapshot is stored.</span>
-<span class="hljs-meta">#</span><span class="bash"> <span class="hljs-keyword">do</span> not use /tmp <span class="hljs-keyword">for</span> storage, /tmp here is just </span>
-<span class="hljs-meta">#</span><span class="bash"> example sakes.</span>
-dataDir=/usr/local/var/run/zookeeper/data
-<span class="hljs-meta">#</span><span class="bash"> the port at <span class="hljs-built_in">which</span> the clients will connect</span>
-clientPort=2181
-<span class="hljs-meta">#</span><span class="bash"> the maximum number of client connections.</span>
-<span class="hljs-meta">#</span><span class="bash"> increase this <span class="hljs-keyword">if</span> you need to handle more clients</span>
-<span class="hljs-meta">#</span><span class="bash">maxClientCnxns=60</span>
-<span class="hljs-meta">#</span>
-<span class="hljs-meta">#</span><span class="bash"> Be sure to <span class="hljs-built_in">read</span> the maintenance section of the </span>
-<span class="hljs-meta">#</span><span class="bash"> administrator guide before turning on autopurge.</span>
-<span class="hljs-meta">#</span>
-<span class="hljs-meta">#</span><span class="bash"> http://zookeeper.apache.org/doc/current/zookeeperAdmin.html<span class="hljs-comment">#sc_maintenance</span></span>
-<span class="hljs-meta">#</span>
-<span class="hljs-meta">#</span><span class="bash"> The number of snapshots to retain <span class="hljs-keyword">in</span> dataDir</span>
-<span class="hljs-meta">#</span><span class="bash">autopurge.snapRetainCount=3</span>
-<span class="hljs-meta">#</span><span class="bash"> Purge task interval <span class="hljs-keyword">in</span> hours</span>
-<span class="hljs-meta">#</span><span class="bash"> Set to <span class="hljs-string">"0"</span> to <span class="hljs-built_in">disable</span> auto purge feature</span>
-<span class="hljs-meta">#</span><span class="bash">autopurge.purgeInterval=1</span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> The number of milliseconds of each tick</span><br>tickTime=2000<br><span class="hljs-meta">#</span><span class="bash"> The number of ticks that the initial </span><br><span class="hljs-meta">#</span><span class="bash"> synchronization phase can take</span><br>initLimit=10<br><span class="hljs-meta">#</span><span class="bash"> The number of ticks that can pass between </span><br><span class="hljs-meta">#</span><span class="bash"> sending a request and getting an acknowledgement</span><br>syncLimit=5<br><span class="hljs-meta">#</span><span class="bash"> the directory <span class="hljs-built_in">where</span> the snapshot is stored.</span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-keyword">do</span> not use /tmp <span class="hljs-keyword">for</span> storage, /tmp here is just </span><br><span class="hljs-meta">#</span><span class="bash"> example sakes.</span><br>dataDir=/usr/local/var/run/zookeeper/data<br><span class="hljs-meta">#</span><span class="bash"> the port at <span class="hljs-built_in">which</span> the clients will connect</span><br>clientPort=2181<br><span class="hljs-meta">#</span><span class="bash"> the maximum number of client connections.</span><br><span class="hljs-meta">#</span><span class="bash"> increase this <span class="hljs-keyword">if</span> you need to handle more clients</span><br><span class="hljs-meta">#</span><span class="bash">maxClientCnxns=60</span><br><span class="hljs-meta">#</span><br><span class="hljs-meta">#</span><span class="bash"> Be sure to <span class="hljs-built_in">read</span> the maintenance section of the </span><br><span class="hljs-meta">#</span><span class="bash"> administrator guide before turning on autopurge.</span><br><span class="hljs-meta">#</span><br><span class="hljs-meta">#</span><span class="bash"> http://zookeeper.apache.org/doc/current/zookeeperAdmin.html<span class="hljs-comment">#sc_maintenance</span></span><br><span class="hljs-meta">#</span><br><span class="hljs-meta">#</span><span class="bash"> The number of snapshots to retain <span class="hljs-keyword">in</span> dataDir</span><br><span class="hljs-meta">#</span><span class="bash">autopurge.snapRetainCount=3</span><br><span class="hljs-meta">#</span><span class="bash"> Purge task interval <span class="hljs-keyword">in</span> hours</span><br><span class="hljs-meta">#</span><span class="bash"> Set to <span class="hljs-string">"0"</span> to <span class="hljs-built_in">disable</span> auto purge feature</span><br><span class="hljs-meta">#</span><span class="bash">autopurge.purgeInterval=1</span><br></code></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -268,41 +230,12 @@ clientPort=2181
 <ul>
 <li>执行命令zkServer</li>
 </ul>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> zkServer</span>
-ZooKeeper JMX enabled by default
-Using config: /usr/local/etc/zookeeper/zoo.cfg
-Usage: ./zkServer.sh &#123;start|start-foreground|stop|restart|status|upgrade|print-cmd&#125;
-
-<span class="hljs-meta">$</span><span class="bash"> zkServer status</span>
-ZooKeeper JMX enabled by default
-Using config: /usr/local/etc/zookeeper/zoo.cfg
-Error contacting service. It is probably not running.
-
-<span class="hljs-meta">$</span><span class="bash"> zkServer start</span>
-ZooKeeper JMX enabled by default
-Using config: /usr/local/etc/zookeeper/zoo.cfg
-Starting zookeeper ... STARTED</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> zkServer</span><br>ZooKeeper JMX enabled by default<br>Using config: /usr/local/etc/zookeeper/zoo.cfg<br>Usage: ./zkServer.sh &#123;start|start-foreground|stop|restart|status|upgrade|print-cmd&#125;<br><br><span class="hljs-meta">$</span><span class="bash"> zkServer status</span><br>ZooKeeper JMX enabled by default<br>Using config: /usr/local/etc/zookeeper/zoo.cfg<br>Error contacting service. It is probably not running.<br><br><span class="hljs-meta">$</span><span class="bash"> zkServer start</span><br>ZooKeeper JMX enabled by default<br>Using config: /usr/local/etc/zookeeper/zoo.cfg<br>Starting zookeeper ... STARTED<br></code></pre></td></tr></table></figure>
 <ul>
 <li>查看zookeeper运行及状态</li>
 </ul>
 <p><strong><em>安装后，可以看到zookeeper提供了zkCli等工具进行.</em></strong></p>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> zkServer status</span>
-ZooKeeper JMX enabled by default
-Using config: /usr/local/etc/zookeeper/zoo.cfg
-Error contacting service. It is probably not running.
-192:~ maerfeifei$ zkServer start
-ZooKeeper JMX enabled by default
-Using config: /usr/local/etc/zookeeper/zoo.cfg
-Starting zookeeper ... STARTED
-192:~ maerfeifei$ zkCli
-Connecting to localhost:2181
-Welcome to ZooKeeper!
-JLine support is enabled
-
-WATCHER::
-
-WatchedEvent state:SyncConnected type:None path:null
-[zk: localhost:2181(CONNECTED) 0]</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> zkServer status</span><br>ZooKeeper JMX enabled by default<br>Using config: /usr/local/etc/zookeeper/zoo.cfg<br>Error contacting service. It is probably not running.<br>192:~ maerfeifei$ zkServer start<br>ZooKeeper JMX enabled by default<br>Using config: /usr/local/etc/zookeeper/zoo.cfg<br>Starting zookeeper ... STARTED<br>192:~ maerfeifei$ zkCli<br>Connecting to localhost:2181<br>Welcome to ZooKeeper!<br>JLine support is enabled<br><br>WATCHER::<br><br>WatchedEvent state:SyncConnected type:None path:null<br>[zk: localhost:2181(CONNECTED) 0]<br></code></pre></td></tr></table></figure>
 
         </div>
 

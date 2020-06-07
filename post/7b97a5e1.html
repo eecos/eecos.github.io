@@ -206,153 +206,32 @@
 <ul>
 <li>这里采用官方镜像提供默认配置，可根据docker-compose配置说明做调整</li>
 </ul>
-<pre><code class="hljs text">
-version: &#39;3.1&#39;
-
-services:
-  zoo1:
-    image: zookeeper:3.4.11
-    restart: always
-    hostname: zoo1
-    container_name: zookeeper_1
-    #domainname: 
-    ports:
-      - 2181:2181
-    volumes:
-      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo1&#x2F;data:&#x2F;data
-      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo1&#x2F;datalog:&#x2F;datalog
-    environment:
-      ZOO_MY_ID: 1
-      ZOO_SERVERS: server.1&#x3D;zoo1:2888:3888 server.2&#x3D;zoo2:2888:3888 server.3&#x3D;zoo3:2888:3888
-
-  zoo2:
-    image: zookeeper:3.4.11
-    restart: always
-    hostname: zoo2
-    container_name: zookeeper_2
-    ports:
-      - 2182:2181
-    volumes:
-      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo2&#x2F;data:&#x2F;data
-      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo2&#x2F;datalog:&#x2F;datalog
-    environment:
-      ZOO_MY_ID: 2
-      ZOO_SERVERS: server.1&#x3D;zoo1:2888:3888 server.2&#x3D;zoo2:2888:3888 server.3&#x3D;zoo3:2888:3888
-
-  zoo3:
-    image: zookeeper:3.4.11
-    restart: always
-    hostname: zoo3
-    container_name: zookeeper_3
-    ports:
-      - 2183:2181
-    volumes:
-      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo3&#x2F;data:&#x2F;data
-      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo3&#x2F;datalog:&#x2F;datalog
-    environment:
-      ZOO_MY_ID: 3
-      ZOO_SERVERS: server.1&#x3D;zoo1:2888:3888 server.2&#x3D;zoo2:2888:3888 server.3&#x3D;zoo3:2888:3888</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs text"><br>version: &#39;3.1&#39;<br><br>services:<br>  zoo1:<br>    image: zookeeper:3.4.11<br>    restart: always<br>    hostname: zoo1<br>    container_name: zookeeper_1<br>    #domainname: <br>    ports:<br>      - 2181:2181<br>    volumes:<br>      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo1&#x2F;data:&#x2F;data<br>      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo1&#x2F;datalog:&#x2F;datalog<br>    environment:<br>      ZOO_MY_ID: 1<br>      ZOO_SERVERS: server.1&#x3D;zoo1:2888:3888 server.2&#x3D;zoo2:2888:3888 server.3&#x3D;zoo3:2888:3888<br><br>  zoo2:<br>    image: zookeeper:3.4.11<br>    restart: always<br>    hostname: zoo2<br>    container_name: zookeeper_2<br>    ports:<br>      - 2182:2181<br>    volumes:<br>      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo2&#x2F;data:&#x2F;data<br>      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo2&#x2F;datalog:&#x2F;datalog<br>    environment:<br>      ZOO_MY_ID: 2<br>      ZOO_SERVERS: server.1&#x3D;zoo1:2888:3888 server.2&#x3D;zoo2:2888:3888 server.3&#x3D;zoo3:2888:3888<br><br>  zoo3:<br>    image: zookeeper:3.4.11<br>    restart: always<br>    hostname: zoo3<br>    container_name: zookeeper_3<br>    ports:<br>      - 2183:2181<br>    volumes:<br>      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo3&#x2F;data:&#x2F;data<br>      - &#x2F;usr&#x2F;local&#x2F;docker_app&#x2F;zookeeper&#x2F;zoo3&#x2F;datalog:&#x2F;datalog<br>    environment:<br>      ZOO_MY_ID: 3<br>      ZOO_SERVERS: server.1&#x3D;zoo1:2888:3888 server.2&#x3D;zoo2:2888:3888 server.3&#x3D;zoo3:2888:3888<br></code></pre></td></tr></table></figure>
 <ul>
 <li>docker-compse命令提供了一系列子命令</li>
 </ul>
-<pre><code class="hljs shell">
-Define and run multi-container applications with Docker.
-
-Usage:
-  docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]
-  docker-compose -h|--help
-
-Options:
-  -f, --file FILE             Specify an alternate compose file (default: docker-compose.yml)
-  -p, --project-name NAME     Specify an alternate project name (default: directory name)
-  --verbose                   Show more output
-  --no-ansi                   Do not print ANSI control characters
-  -v, --version               Print version and exit
-  -H, --host HOST             Daemon socket to connect to
-
-  --tls                       Use TLS; implied by --tlsverify
-  --tlscacert CA_PATH         Trust certs signed only by this CA
-  --tlscert CLIENT_CERT_PATH  Path to TLS certificate file
-  --tlskey TLS_KEY_PATH       Path to TLS key file
-  --tlsverify                 Use TLS and verify the remote
-  --skip-hostname-check       Don't check the daemon's hostname against the name specified
-                              in the client certificate (for example if your docker host
-                              is an IP address)
-  --project-directory PATH    Specify an alternate working directory
-                              (default: the path of the Compose file)
-
-Commands:
-  build              Build or rebuild services
-  bundle             Generate a Docker bundle from the Compose file
-  config             Validate and view the Compose file
-  create             Create services
-  down               Stop and remove containers, networks, images, and volumes
-  events             Receive real time events from containers
-  exec               Execute a command in a running container
-  help               Get help on a command
-  images             List images
-  kill               Kill containers
-  logs               View output from containers
-  pause              Pause services
-  port               Print the public port for a port binding
-  ps                 List containers
-  pull               Pull service images
-  push               Push service images
-  restart            Restart services
-  rm                 Remove stopped containers
-  run                Run a one-off command
-  scale              Set number of containers for a service
-  start              Start services
-  stop               Stop services
-  top                Display the running processes
-  unpause            Unpause services
-  up                 Create and start containers
-  version            Show the Docker-Compose version information</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs shell"><br>Define and run multi-container applications with Docker.<br><br>Usage:<br>  docker-compose [-f &lt;arg&gt;...] [options] [COMMAND] [ARGS...]<br>  docker-compose -h|--help<br><br>Options:<br>  -f, --file FILE             Specify an alternate compose file (default: docker-compose.yml)<br>  -p, --project-name NAME     Specify an alternate project name (default: directory name)<br>  --verbose                   Show more output<br>  --no-ansi                   Do not print ANSI control characters<br>  -v, --version               Print version and exit<br>  -H, --host HOST             Daemon socket to connect to<br><br>  --tls                       Use TLS; implied by --tlsverify<br>  --tlscacert CA_PATH         Trust certs signed only by this CA<br>  --tlscert CLIENT_CERT_PATH  Path to TLS certificate file<br>  --tlskey TLS_KEY_PATH       Path to TLS key file<br>  --tlsverify                 Use TLS and verify the remote<br>  --skip-hostname-check       Don't check the daemon's hostname against the name specified<br>                              in the client certificate (for example if your docker host<br>                              is an IP address)<br>  --project-directory PATH    Specify an alternate working directory<br>                              (default: the path of the Compose file)<br><br>Commands:<br>  build              Build or rebuild services<br>  bundle             Generate a Docker bundle from the Compose file<br>  config             Validate and view the Compose file<br>  create             Create services<br>  down               Stop and remove containers, networks, images, and volumes<br>  events             Receive real time events from containers<br>  exec               Execute a command in a running container<br>  help               Get help on a command<br>  images             List images<br>  kill               Kill containers<br>  logs               View output from containers<br>  pause              Pause services<br>  port               Print the public port for a port binding<br>  ps                 List containers<br>  pull               Pull service images<br>  push               Push service images<br>  restart            Restart services<br>  rm                 Remove stopped containers<br>  run                Run a one-off command<br>  scale              Set number of containers for a service<br>  start              Start services<br>  stop               Stop services<br>  top                Display the running processes<br>  unpause            Unpause services<br>  up                 Create and start containers<br>  version            Show the Docker-Compose version information<br></code></pre></td></tr></table></figure>
 <ul>
 <li>校验指定配置文件正确性，默认配置文件名称<code>docker-compose.yml</code>或<code>docker-compose.yml</code>，我这里使用自定义名称<code>zookeeper-compose.yml</code></li>
 </ul>
 <blockquote>
 <p>注意：如若需指定配置文件，必须在<code>docker-compose</code>后面指定，不能在<code>config</code>等子命令后面指定，否则无效；如果你使用默认配置文件名称，不需要显式指定<code>-f docker-compose.yml</code></p>
 </blockquote>
-<pre><code class="hljs shell">// 查看config命令参数
-<span class="hljs-meta">$</span><span class="bash"> docker-compose -f zookeeper-compose.yml config --<span class="hljs-built_in">help</span></span>
-// 校验配置文件，不打印
-<span class="hljs-meta">$</span><span class="bash"> docker-compose -f zookeeper-compose.yml config -q</span></code></pre>
-<h2 id="启动zookeeper集群"><a href="#启动zookeeper集群" class="headerlink" title="启动zookeeper集群"></a>启动zookeeper集群</h2><pre><code class="hljs shell">// -d 后台启动
-<span class="hljs-meta">$</span><span class="bash"> docker-compose -f zookeeper-compose.yml up -d</span></code></pre>
-<h2 id="查看容器启动情况"><a href="#查看容器启动情况" class="headerlink" title="查看容器启动情况"></a>查看容器启动情况</h2><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> docker-compose -f zookeeper-compose.yml ps</span>
-   Name                  Command               State                     Ports                   
--------------------------------------------------------------------------------------------------
-zookeeper_1   /docker-entrypoint.sh zkSe ...   Up      0.0.0.0:2181-&gt;2181/tcp, 2888/tcp, 3888/tcp
-zookeeper_2   /docker-entrypoint.sh zkSe ...   Up      0.0.0.0:2182-&gt;2181/tcp, 2888/tcp, 3888/tcp
-zookeeper_3   /docker-entrypoint.sh zkSe ...   Up      0.0.0.0:2183-&gt;2181/tcp, 2888/tcp, 3888/tcp</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">// 查看config命令参数<br><span class="hljs-meta">$</span><span class="bash"> docker-compose -f zookeeper-compose.yml config --<span class="hljs-built_in">help</span></span><br>// 校验配置文件，不打印<br><span class="hljs-meta">$</span><span class="bash"> docker-compose -f zookeeper-compose.yml config -q</span><br></code></pre></td></tr></table></figure>
+<h2 id="启动zookeeper集群"><a href="#启动zookeeper集群" class="headerlink" title="启动zookeeper集群"></a>启动zookeeper集群</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">// -d 后台启动<br><span class="hljs-meta">$</span><span class="bash"> docker-compose -f zookeeper-compose.yml up -d</span><br></code></pre></td></tr></table></figure>
+<h2 id="查看容器启动情况"><a href="#查看容器启动情况" class="headerlink" title="查看容器启动情况"></a>查看容器启动情况</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> docker-compose -f zookeeper-compose.yml ps</span><br>   Name                  Command               State                     Ports                   <br>-------------------------------------------------------------------------------------------------<br>zookeeper_1   /docker-entrypoint.sh zkSe ...   Up      0.0.0.0:2181-&gt;2181/tcp, 2888/tcp, 3888/tcp<br>zookeeper_2   /docker-entrypoint.sh zkSe ...   Up      0.0.0.0:2182-&gt;2181/tcp, 2888/tcp, 3888/tcp<br>zookeeper_3   /docker-entrypoint.sh zkSe ...   Up      0.0.0.0:2183-&gt;2181/tcp, 2888/tcp, 3888/tcp<br></code></pre></td></tr></table></figure>
 <h2 id="查看zookeeper集群状态"><a href="#查看zookeeper集群状态" class="headerlink" title="查看zookeeper集群状态"></a>查看zookeeper集群状态</h2><ul>
 <li>zoo1</li>
 </ul>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> docker <span class="hljs-built_in">exec</span> -it zookeeper_1 /bin/sh</span>
-
-/zookeeper-3.4.11 # zkServer.sh status
-ZooKeeper JMX enabled by default
-Using config: /conf/zoo.cfg
-Mode: follower                  // 这是个follower</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> docker <span class="hljs-built_in">exec</span> -it zookeeper_1 /bin/sh</span><br><br>/zookeeper-3.4.11 # zkServer.sh status<br>ZooKeeper JMX enabled by default<br>Using config: /conf/zoo.cfg<br>Mode: follower                  // 这是个follower<br></code></pre></td></tr></table></figure>
 <ul>
 <li>zoo2</li>
 </ul>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> docker <span class="hljs-built_in">exec</span> -it zookeeper_2 /bin/sh</span>
-
-/zookeeper-3.4.11 # zkServer.sh status
-ZooKeeper JMX enabled by default
-Using config: /conf/zoo.cfg
-Mode: leader                // 这是个leader</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> docker <span class="hljs-built_in">exec</span> -it zookeeper_2 /bin/sh</span><br><br>/zookeeper-3.4.11 # zkServer.sh status<br>ZooKeeper JMX enabled by default<br>Using config: /conf/zoo.cfg<br>Mode: leader                // 这是个leader<br></code></pre></td></tr></table></figure>
 <ul>
 <li>zoo3</li>
 </ul>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> docker <span class="hljs-built_in">exec</span> -it zookeeper_3 /bin/sh</span>
-
-/zookeeper-3.4.11 # zkServer.sh status
-ZooKeeper JMX enabled by default
-Using config: /conf/zoo.cfg
-Mode: follower            // 这也是个follower哦</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> docker <span class="hljs-built_in">exec</span> -it zookeeper_3 /bin/sh</span><br><br>/zookeeper-3.4.11 # zkServer.sh status<br>ZooKeeper JMX enabled by default<br>Using config: /conf/zoo.cfg<br>Mode: follower            // 这也是个follower哦<br></code></pre></td></tr></table></figure>
 <h4 id="三个zookeeper服务都正常启动了"><a href="#三个zookeeper服务都正常启动了" class="headerlink" title="三个zookeeper服务都正常启动了"></a>三个zookeeper服务都正常启动了</h4>
         </div>
 
